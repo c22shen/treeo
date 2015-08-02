@@ -6,11 +6,11 @@ angular
 
 	function config($stateProvider, $urlRouterProvider) {
 
-		$urlRouterProvider.otherwise("/state1");
+		$urlRouterProvider.otherwise("/home");
 
 		$stateProvider
-			.state('state1', {
-				url: "/state1",
-				templateUrl: "/javascripts/app/lessons/lessons.html"
+			.state('home', {
+				url: "/home",
+				templateUrl: "/javascripts/app/home.html"
 			});
 	}
