@@ -1,0 +1,25 @@
+<div ng-include src="'/javascripts/app/navbar.html'"></div>
+<!-- <i class="fa fa-spinner fa-spin"></i> -->
+<div class="row">
+	<!-- do ng switch on type -->
+    <div class="col-sm-5">
+        <h1>{{currentLessonStep.title}}</h1>
+        <p ng-bind-html="lessonContent.scratch[0].lesson_5[0].instruction"></p>
+    </div>
+    <div class="col-sm-7">
+        <img style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
+    </div>
+</div>
+
+<div class="footer navbar-fixed-bottom">
+    <div class="row">
+    <div class="col-sm-10">
+    <div ng-controller="ProgressDemoCtrl">
+        <progressbar max="max" value="dynamic"><span style="color:white; white-space:nowrap;">{{dynamic}} / {{max}}</span></progressbar>
+    </div>
+    </div>
+    <div class="col-sm-2 text-center">
+    	<button class="btn btn-info btn-block" style="padding:0" type="submit">Next</button>
+    </div>
+    </div>
+</div>

@@ -3,9 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+/*a {
   color: #00B7FF;
-}
+}*/
 
 .bg {
   background: url('/images/jumbotron.jpg') no-repeat center center;
@@ -22,4 +22,14 @@ a {
   color: white;
   text-shadow: #444 0 1px 1px;
   /*background: /transparent !important;*/
+}
+
+.panel > .panel-heading {
+    background-image: none;
+    background-color: transparent;
+    /*color: white;*/
+}
+
+.progress {
+  margin-bottom: 0;
 }

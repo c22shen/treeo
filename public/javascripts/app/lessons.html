@@ -1,0 +1,27 @@
+<div ng-include src="'/javascripts/app/navbar.html'"></div>
+<div class="container">
+    <!-- <div class="row">
+        <h1>Scratch Lessons</h1>
+    </div> -->
+    <div class="row" style="margin-top:80px">
+        <div>
+            <accordion close-others=true>
+                <accordion-group is-open=true ng-repeat="lesson in currentClassContent" style="    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none; 
+    border-bottom: medium solid #0078D7;">
+                    <accordion-heading style="background-color: transparent">
+                        {{lesson.lessonTitle}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': lesson.openModal, 'glyphicon-chevron-right': !lesson.openModal}"></i>
+                    </accordion-heading>
+                    <ul class="list-group">
+                        <li ng-repeat="step in lesson.lessonSteps" class="list-group-item">
+                            {{step.title}}
+                            <a class="pull-right" ui-sref="lesson({step: $index, lesson: $parent.$index})"><i class="fa fa-arrow-circle-right" style="font-size:1.5em; color: #0078D7"></i></a>
+                        </li>
+                    </ul>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
+</div>
