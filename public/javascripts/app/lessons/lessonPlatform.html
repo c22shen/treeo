@@ -1,25 +1,62 @@
 <div ng-include src="'/javascripts/app/navbar.html'"></div>
 <!-- <i class="fa fa-spinner fa-spin"></i> -->
+<!-- <div class="animate-switch-container"
+    ng-switch on="selection">
+      <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
+      <div class="animate-switch" ng-switch-when="home">Home Span</div>
+      <div class="animate-switch" ng-switch-default>default</div>
+  </div>
+ -->
 <div class="row">
-	<!-- do ng switch on type -->
+    <!-- do ng switch on type -->
     <div class="col-sm-5">
         <h1>{{currentLessonStep.title}}</h1>
-        <p ng-bind-html="lessonContent.scratch[0].lesson_5[0].instruction"></p>
+        <p ng-bind-html="currentLessonStep.instruction"></p>
     </div>
-    <div class="col-sm-7">
-        <img style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
+    <div class="col-sm-7 pull-right" style="margin-top:20px;" ng-switch on="currentLessonStep.type">
+        <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
+        <!--         <div ng-switch-when="video" class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="{{currentLessonStep.location}}"></iframe>
+        </div> -->
+        <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
+            <video autoplay controls class="embed-responsive-item">
+                <source ng-src="{{trustSrc(currentLessonStep.location)}}">
+            </video>
+        </div>
+        <div ng-switch-when="youtube" class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}"></iframe>
+        </div>
+        <pre class="prettyprint linenums" ng-switch-when="code">
+void setup() {
+
+  Serial.begin(9600);
+
+  int i;
+  for(i=0; i<5; i++){
+    Serial.println(i);
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+
+}
+        </pre>
     </div>
 </div>
-
+</div>
 <div class="footer navbar-fixed-bottom">
     <div class="row">
-    <div class="col-sm-10">
-    <div ng-controller="ProgressDemoCtrl">
-        <progressbar max="max" value="dynamic"><span style="color:white; white-space:nowrap;">{{dynamic}} / {{max}}</span></progressbar>
-    </div>
-    </div>
-    <div class="col-sm-2 text-center">
-    	<button class="btn btn-info btn-block" style="padding:0" type="submit">Next</button>
-    </div>
+    	<div class="col-sm-2 text-center">
+            <button class="btn btn-info btn-block" style="padding:0" ng-click="previousPage()">Previous</button>
+        </div>
+        <div class="col-sm-8">        	
+            <div>
+                <progressbar max="max" value="progressBarValue"><span style="color:white; white-space:nowrap;">{{progressLessonStep}} / {{progressLessonStepTotal}}</span></progressbar>
+            </div>
+        </div>
+        <div class="col-sm-2 text-center">
+            <button class="btn btn-info btn-block" style="padding:0" ng-click="nextPage()">Next</button>
+        </div>
     </div>
 </div>
