@@ -1,6 +1,6 @@
 angular
     .module('app')
-    .controller('dataController', ['$scope', '$sce', '$rootScope', '$stateParams', function($scope, $sce, $rootScope, $stateParams) {
+    .controller('dataController', ['$scope', '$state', '$cookies', '$sce', '$rootScope', '$stateParams', function($scope, $state, $cookies, $sce, $rootScope, $stateParams) {
         'use strict';
 
         $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen);
@@ -15,21 +15,29 @@ angular
             return $sce.trustAsResourceUrl(src);
         }
 
+        $rootScope.login = function() {
+
+            var today = new Date();
+            var expireDate = today.setHours(today.getHours() + 1);
+            $cookies.put('login', true);
+            $state.go('home');
+        }
+
         $rootScope.nextPage = function() {
             $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
             $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
-            $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen)+1;
+            $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
             $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
-            $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal*100.0;
+            $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
 
         }
 
         $rootScope.previousPage = function() {
             $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) - 1;
             $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
-            $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen)+1;
+            $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
             $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
-            $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal*100.0;
+            $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
 
         }
 

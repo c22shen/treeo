@@ -18,6 +18,10 @@
     "angular": "~1.4.3",
     "angular-ui-router": "~0.2.15",
     "angular-bootstrap": "~0.13.1",
-    "angular-sanitize": "~1.4.3"
+    "angular-sanitize": "~1.4.3",
+    "angular-cookies": "~1.4.4"
+  },
+  "resolutions": {
+    "angular": "~1.4.3"
   }
 }

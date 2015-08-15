@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-    .module('app', ['ui.router', 'ui.bootstrap', 'ngSanitize'])
+    .module('app', ['ui.router', 'ui.bootstrap', 'ngSanitize', 'ngCookies'])
 
 // .directive("mySrc", function($rootScope) {
 //     return {
