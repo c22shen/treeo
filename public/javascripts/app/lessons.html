@@ -17,7 +17,7 @@
                     <ul class="list-group">
                         <li ng-repeat="step in lesson.lessonSteps" class="list-group-item">
                             {{step.title}}
-                            <a class="pull-right" ui-sref="lesson({step: $index, lesson: $parent.$index})"><i class="fa fa-arrow-circle-right" style="font-size:1.5em; color: #0078D7"></i></a>
+                            <a class="pull-right" ui-sref="lesson({step: $index, lesson: $parent.$index, class: classChosen})"><i class="fa fa-arrow-circle-right" style="font-size:1.5em; color: #0078D7"></i></a>
                         </li>
                     </ul>
                 </accordion-group>

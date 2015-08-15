@@ -2,12 +2,54 @@ angular
     .module('app')
     .controller('dataController', ['$scope', '$state', '$cookies', '$sce', '$rootScope', '$stateParams', function($scope, $state, $cookies, $sce, $rootScope, $stateParams) {
         'use strict';
+        var loginStatus = $cookies.get('login');
+        if (!loginStatus) {
+            $state.go('login');
+        }
+
+        $rootScope.stepIndexChosen = $stateParams.step;
+        $rootScope.lessonIndexChosen = $stateParams.lesson;
+        // $rootScope.lessonIndexChosen = $stateParams.lesson; 
+        
+
+        $rootScope.classChosen = $stateParams.class;
+
+        $scope.$watch('classChosen', function(classChosen) {
+            $rootScope.currentClassContent = $rootScope.classesContent.classesOffered[$rootScope.classChosen];
+        })
+
+
+        $scope.$watch('stepIndexChosen', function(stepIndexChosen) {
+            console.log("CHANGED stepIndexChosen");
+            if ($rootScope.lessonIndexChosen && $rootScope.stepIndexChosen) {
+                $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
+                // $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
+
+                $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
+                $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
+                $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
+            }
+        })
+
+
+        $scope.$watch('lessonIndexChosen', function(stepIndexChosen) {
+            console.log("CHANGED lessonIndexChosen");
+            if ($rootScope.lessonIndexChosen && $rootScope.stepIndexChosen) {
+                $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
+                $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
+                $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
+                $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
+
+            }
+            // $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
+            // $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
+        })
 
         $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen);
         $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
 
         // console.log($stateParams);
-        $rootScope.classChosen = $stateParams.class;
+        // $rootScope.classChosen = $stateParams.class;
         // console.log($stateParams);
         // $rootScope.stepChosen = $stateParams.step;
         // $rootScope.henry = "Above Average";
@@ -15,29 +57,35 @@ angular
             return $sce.trustAsResourceUrl(src);
         }
 
-        $rootScope.login = function() {
+        Date.prototype.addHours = function(h) {
+            this.setHours(this.getHours() + h);
+            return this;
+        }
 
-            var today = new Date();
-            var expireDate = today.setHours(today.getHours() + 1);
-            $cookies.put('login', true);
+
+        $rootScope.login = function() {
+            var expireDate = new Date().addHours(1);
+            $cookies.put('login', true, {
+                expires: expireDate
+            });
             $state.go('home');
         }
 
         $rootScope.nextPage = function() {
             $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
-            $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
-            $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
-            $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
-            $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
+            // $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
+            // $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
+            // $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
+            // $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
 
         }
 
         $rootScope.previousPage = function() {
             $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) - 1;
-            $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
-            $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
-            $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
-            $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
+            // $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
+            // $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
+            // $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
+            // $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
 
         }
 
@@ -80,7 +128,6 @@ angular
                 }]
             }
         }
-        $rootScope.currentClassContent = $rootScope.classesContent.classesOffered[$rootScope.classChosen];
-        // $rootScope.currentLessonStep = (!!$rootScope.currentLessonContent)? $rootScope.lessonContent.lessonsOffered[$rootScope.lessonChosen][$rootScope.stepChosen] : null;
+        // $rootScope.currentClassContent = $rootScope.classesContent.classesOffered[$rootScope.classChosen];
 
     }]);
