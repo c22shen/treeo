@@ -13,11 +13,23 @@
         <h1>{{currentLessonStep.title}}</h1>
         <p ng-bind-html="currentLessonStep.instruction"></p>
     </div>
-    <div class="col-sm-7 pull-right" style="margin-top:20px;" ng-switch on="currentLessonStep.type">
+    <div ng-controller="ModalController" class="col-sm-7 pull-right" style="margin-top:20px;" ng-switch on="currentLessonStep.type">
         <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
-        <!--         <div ng-switch-when="video" class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="{{currentLessonStep.location}}"></iframe>
-        </div> -->
+        
+
+        <button type="button" class="btn btn-primary pull-right" ng-click="open()"> <i class="fa fa-search-plus"></i></button>
+
+
+
+
+
+
+
+
+
+
+
+
         <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
             <video autoplay controls class="embed-responsive-item">
                 <source ng-src="{{trustSrc(currentLessonStep.location)}}">
@@ -47,10 +59,10 @@ void loop() {
 </div>
 <div class="footer navbar-fixed-bottom">
     <div class="row">
-    	<div class="col-sm-2 text-center">
+        <div class="col-sm-2 text-center">
             <button class="btn btn-info btn-block" style="padding:0" ng-click="previousPage()">Previous</button>
         </div>
-        <div class="col-sm-8">        	
+        <div class="col-sm-8">
             <div>
                 <progressbar max="max" value="progressBarValue"><span style="color:white; white-space:nowrap;">{{progressLessonStep}} / {{progressLessonStepTotal}}</span></progressbar>
             </div>

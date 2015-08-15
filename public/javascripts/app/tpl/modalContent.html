@@ -1,0 +1,24 @@
+<div class="modal-body">
+    <div class="container">
+        <div class="row pull-right">
+            <button type="button" ng-click="ok()" class="btn btn-primary  btn-lg">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <div class="row">
+    <div ng-switch on="currentLessonStep.type">
+        <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
+
+
+        <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
+            <video autoplay controls class="embed-responsive-item">
+                <source ng-src="{{trustSrc(currentLessonStep.location)}}">
+            </video>
+        </div>
+        <div ng-switch-when="youtube" class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}"></iframe>
+        </div>
+        <pre class="prettyprint linenums" ng-switch-when="code">
+        </div>
+    </div>
+</div>

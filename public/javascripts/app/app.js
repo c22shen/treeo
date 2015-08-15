@@ -53,6 +53,15 @@ angular
                 // width:element[0].offsetWidth+'px' //same with width
             };
         });
+
+        // scope.$watch('stepIndexChosen', function(stepIndexChosen){
+        //     console.log("CHANGED");
+        //      // $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
+        //     scope.currentLessonStep = (!!scope.currentClassContent) ? scope.currentClassContent[parseInt(scope.lessonIndexChosen)].lessonSteps[parseInt(scope.stepIndexChosen)] : null;
+        //     scope.progressLessonStep = parseInt(scope.stepIndexChosen)+1;
+        //     scope.progressLessonStepTotal = (!!scope.currentClassContent) ? scope.currentClassContent[parseInt(scope.lessonIndexChosen)].lessonSteps.length : 0;
+        //     scope.progressBarValue = scope.progressLessonStep / scope.progressLessonStepTotal*100.0;
+        // })
     }
     return {
         restrict: 'AE', //describes how we can assign an element to our directive in this case like <div master></div
