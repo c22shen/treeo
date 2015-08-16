@@ -67,44 +67,45 @@ angular
         restrict: 'AE', //describes how we can assign an element to our directive in this case like <div master></div
         link: link // the function to link to our element
     };
-}).controller('AccordionDemoCtrl', function($scope) {
-    $scope.oneAtATime = true;
-
-    $scope.scratchLessons = [{
-        title: 'Lesson1',
-        content: 'Scratch Lesson1 content',
-        openModal: 'open1'
-    }, {
-        title: 'Lesson2',
-        content: 'Scratch Lesson2 content',
-        openModal: 'open2'
-    }, {
-        title: 'Lesson3',
-        content: 'Scratch Lesson3 content',
-        openModal: 'open3'
-    }, {
-        title: 'Lesson4',
-        content: 'Scratch Lesson4 content',
-        openModal: 'open4'
-    }, {
-        title: 'Lesson5',
-        content: 'Scratch Lesson5 content',
-        openModal: 'open5'
-    }, {
-        title: 'Lesson6',
-        content: 'Scratch Lesson6 content',
-        openModal: 'open6'
-    }];
-
-    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-    $scope.addItem = function() {
-        var newItemNo = $scope.items.length + 1;
-        $scope.items.push('Item ' + newItemNo);
-    };
-
-    $scope.status = {
-        isFirstOpen: true,
-        isFirstDisabled: false
-    };
 });
+// .controller('AccordionDemoCtrl', function($scope) {
+//     $scope.oneAtATime = true;
+
+//     $scope.scratchLessons = [{
+//         title: 'Lesson1',
+//         content: 'Scratch Lesson1 content',
+//         openModal: 'open1'
+//     }, {
+//         title: 'Lesson2',
+//         content: 'Scratch Lesson2 content',
+//         openModal: 'open2'
+//     }, {
+//         title: 'Lesson3',
+//         content: 'Scratch Lesson3 content',
+//         openModal: 'open3'
+//     }, {
+//         title: 'Lesson4',
+//         content: 'Scratch Lesson4 content',
+//         openModal: 'open4'
+//     }, {
+//         title: 'Lesson5',
+//         content: 'Scratch Lesson5 content',
+//         openModal: 'open5'
+//     }, {
+//         title: 'Lesson6',
+//         content: 'Scratch Lesson6 content',
+//         openModal: 'open6'
+//     }];
+
+//     $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+//     $scope.addItem = function() {
+//         var newItemNo = $scope.items.length + 1;
+//         $scope.items.push('Item ' + newItemNo);
+//     };
+
+//     $scope.status = {
+//         isFirstOpen: true,
+//         isFirstDisabled: false
+//     };
+// });
