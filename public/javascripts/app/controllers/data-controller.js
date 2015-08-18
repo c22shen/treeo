@@ -9,44 +9,60 @@ angular
 
         $rootScope.stepIndexChosen = $stateParams.step;
         $rootScope.lessonIndexChosen = $stateParams.lesson;
-        // $rootScope.lessonIndexChosen = $stateParams.lesson; 
-
-
         $rootScope.classChosen = $stateParams.class;
+
+        if (!!$rootScope.classChosen && !!$rootScope.lessonIndexChosen && !!$rootScope.lessonIndexChosen) {
+            $rootScope.currentClassContent = $rootScope.classesContent.classesOffered[$rootScope.classChosen];
+            $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) - 1;
+            $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
+            $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
+
+        }
 
         $scope.$watch('classChosen', function(classChosen) {
             $rootScope.currentClassContent = $rootScope.classesContent.classesOffered[$rootScope.classChosen];
         })
 
+        $scope.$watch('stepIndexChosenPagination', function(stepIndexChosenPagination) {
+            // START FROM ONE.
+            $rootScope.stepIndexChosen = stepIndexChosenPagination - 1;
+        })
 
         $scope.$watch('stepIndexChosen', function(stepIndexChosen) {
             console.log("CHANGED stepIndexChosen");
-            if ($rootScope.lessonIndexChosen && $rootScope.stepIndexChosen) {
-                $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
-                // $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
+            // START FROM ZERO.
+            console.log(stepIndexChosen);
+            $rootScope.stepIndexChosen = stepIndexChosen;
+            if ($rootScope.lessonIndexChosen) {
 
-                $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
-                $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
-                $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
+                // $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) - 1;
+                $rootScope.progressLessonStepTotal = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length;
+                $rootScope.currentLessonStep = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)];
+
+                // $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
             }
         })
 
 
-        $scope.$watch('lessonIndexChosen', function(stepIndexChosen) {
+        $scope.$watch('lessonIndexChosen', function(lessonIndexChosen) {
             console.log("CHANGED lessonIndexChosen");
-            if ($rootScope.lessonIndexChosen && $rootScope.stepIndexChosen) {
-                $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
-                $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen) + 1;
-                $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
-                $rootScope.progressBarValue = $rootScope.progressLessonStep / $rootScope.progressLessonStepTotal * 100.0;
+            
+
+            $rootScope.lessonIndexChosen = lessonIndexChosen;
+            if ($rootScope.stepIndexChosen) {
+                $rootScope.progressLessonStepTotal = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length;
+                
+                if ($rootScope.stepIndexChosen>=$rootScope.progressLessonStepTotal ) {
+                    $rootScope.stepIndexChosen = 0;
+                }
+
+                $rootScope.currentLessonStep = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)];
 
             }
             // $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
             // $rootScope.currentLessonStep = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)] : null;
         })
 
-        $rootScope.progressLessonStep = parseInt($rootScope.stepIndexChosen);
-        $rootScope.progressLessonStepTotal = (!!$rootScope.currentClassContent) ? $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length : 0;
 
         // console.log($stateParams);
         // $rootScope.classChosen = $stateParams.class;

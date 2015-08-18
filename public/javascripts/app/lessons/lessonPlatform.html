@@ -30,27 +30,35 @@
             <iframe class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}"></iframe>
         </div>
         <pre class="prettyprint linenums" ng-switch-when="code">
-void setup() {
-
-  Serial.begin(9600);
-
-  int i;
-  for(i=0; i<5; i++){
-    Serial.println(i);
-  }
-}
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
-}
+            hello world
         </pre>
     </div>
 </div>
 </div>
+
+
+
+
+
+<!-- <h1>hello</h1> -->
+<!-- {{lessonIndexChosen}} -->
+<!-- {{currentClassContent}} -->
+<!-- {{progressLessonStepTotal}} -->
+
+<!-- <pagination total-items="progressLessonStepTotal" ng-model="stepIndexChosen" max-size=10 class="pagination-sm" boundary-links="true" rotate="false"></pagination> -->
+
+
+
+
+
+
+
 <div class="footer navbar-fixed-bottom">
-    <div class="row">
-        <div class="col-sm-2 text-center">
+    <div class="container">
+    <div class="row text-center">
+        <!-- {{progressLessonStepTotal}} -->
+ <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false"></pagination>
+<!--         <div class="col-sm-2 text-center">
             <button class="btn btn-info btn-block" style="padding:0" ng-click="previousPage()">Previous</button>
         </div>
         <div class="col-sm-8">
@@ -60,6 +68,8 @@ void loop() {
         </div>
         <div class="col-sm-2 text-center">
             <button class="btn btn-info btn-block" style="padding:0" ng-click="nextPage()">Next</button>
-        </div>
+        </div> -->
+
+    </div>
     </div>
 </div>
