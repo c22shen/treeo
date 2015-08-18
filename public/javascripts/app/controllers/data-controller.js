@@ -1,6 +1,6 @@
 angular
     .module('app')
-    .controller('dataController', ['$scope', '$state', '$cookies', '$sce', '$rootScope', '$stateParams', function($scope, $state, $cookies, $sce, $rootScope, $stateParams) {
+    .controller('dataController', ['$scope', '$http', '$state', '$cookies', '$sce', '$rootScope', '$stateParams', function($scope, $http, $state, $cookies, $sce, $rootScope, $stateParams) {
         'use strict';
         var loginStatus = $cookies.get('login');
         if (!loginStatus) {
@@ -46,13 +46,13 @@ angular
 
         $scope.$watch('lessonIndexChosen', function(lessonIndexChosen) {
             console.log("CHANGED lessonIndexChosen");
-            
+
 
             $rootScope.lessonIndexChosen = lessonIndexChosen;
             if ($rootScope.stepIndexChosen) {
                 $rootScope.progressLessonStepTotal = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length;
-                
-                if ($rootScope.stepIndexChosen>=$rootScope.progressLessonStepTotal ) {
+
+                if ($rootScope.stepIndexChosen >= $rootScope.progressLessonStepTotal) {
                     $rootScope.stepIndexChosen = 0;
                 }
 
@@ -79,13 +79,26 @@ angular
         }
 
 
-        $rootScope.login = function() {
-            var expireDate = new Date().addHours(1);
-            $cookies.put('login', true, {
-                expires: expireDate
-            });
-            $state.go('home');
-        }
+        // $rootScope.login = function() {
+        //     console.log($scope.user);
+        //     var expireDate = new Date().addHours(1);
+
+        //     // $http.post('/users/create', {
+        //     //     email: 'w2j@king.com',
+        //     //     password: 'ABCD1234'
+        //     // }).
+        //     // then(function(res) {
+        //     //     console.log("post successful");
+        //     //     $cookies.put('login', true, {
+        //     //         expires: expireDate
+        //     //     });
+        //     //     $state.go('home');
+        //     // }, function(res) {
+        //     //     console.log("post failure");
+        //     // })
+
+
+        // }
 
         $rootScope.nextPage = function() {
             $rootScope.stepIndexChosen = parseInt($rootScope.stepIndexChosen) + 1;
