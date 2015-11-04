@@ -1,19 +1,11 @@
 <div ng-include src="'/javascripts/app/navbar.html'"></div>
-<!-- <i class="fa fa-spinner fa-spin"></i> -->
-<!-- <div class="animate-switch-container"
-    ng-switch on="selection">
-      <div class="animate-switch" ng-switch-when="settings">Settings Div</div>
-      <div class="animate-switch" ng-switch-when="home">Home Span</div>
-      <div class="animate-switch" ng-switch-default>default</div>
-  </div>
- -->
+
 <div class="row">
     <div class="col-sm-12">
         <button ng-repeat="lesson in currentClassContent" type="button" style="margin: auto 10px" class="btn btn-primary btn-xs" ui-sref="lesson({step: 0, lesson: $index, class: classChosen})">{{lesson.lessonTitle}}</button>
     </div>
 </div>
 <div class="row">
-    <!-- do ng switch on type -->
     <div class="col-sm-5">
         <h1>{{currentLessonStep.title}}</h1>
         <p ng-bind-html="currentLessonStep.instruction"></p>
@@ -29,47 +21,14 @@
         <div ng-switch-when="youtube" class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}"></iframe>
         </div>
-        <pre class="prettyprint linenums" ng-switch-when="code">
-            hello world
-        </pre>
     </div>
 </div>
 </div>
 
-
-
-
-
-<!-- <h1>hello</h1> -->
-<!-- {{lessonIndexChosen}} -->
-<!-- {{currentClassContent}} -->
-<!-- {{progressLessonStepTotal}} -->
-
-<!-- <pagination total-items="progressLessonStepTotal" ng-model="stepIndexChosen" max-size=10 class="pagination-sm" boundary-links="true" rotate="false"></pagination> -->
-
-
-
-
-
-
-
 <div class="footer navbar-fixed-bottom">
     <div class="container">
     <div class="row text-center">
-        <!-- {{progressLessonStepTotal}} -->
  <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false"></pagination>
-<!--         <div class="col-sm-2 text-center">
-            <button class="btn btn-info btn-block" style="padding:0" ng-click="previousPage()">Previous</button>
-        </div>
-        <div class="col-sm-8">
-            <div>
-                <progressbar max="max" value="progressBarValue"><span style="color:white; white-space:nowrap;">{{progressLessonStep}} / {{progressLessonStepTotal}}</span></progressbar>
-            </div>
-        </div>
-        <div class="col-sm-2 text-center">
-            <button class="btn btn-info btn-block" style="padding:0" ng-click="nextPage()">Next</button>
-        </div> -->
-
     </div>
     </div>
 </div>

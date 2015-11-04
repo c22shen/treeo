@@ -6,7 +6,7 @@ angular
 
 function config($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.otherwise("/home");
 
     $stateProvider
         .state("login", {
@@ -46,10 +46,10 @@ function config($stateProvider, $urlRouterProvider) {
             url: "/home",
             templateUrl: "/javascripts/app/home.html",
             controller: function($scope, $cookies, $state) {
-                var loginStatus = $cookies.get('login');
-                if (!loginStatus) {
-                    $state.go('login');
-                }
+                // var loginStatus = $cookies.get('login');
+                // if (!loginStatus) {
+                //     $state.go('login');
+                // }
             }
         })
         .state('lessons', {
