@@ -11,14 +11,12 @@
 
 
         <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
-            <video autoplay controls class="embed-responsive-item">
-                <source ng-src="{{trustSrc(currentLessonStep.location)}}">
+            <video autoplay controls class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}">
             </video>
         </div>
         <div ng-switch-when="youtube" class="embed-responsive embed-responsive-16by9">
             <iframe class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}"></iframe>
         </div>
-        <pre class="prettyprint linenums" ng-switch-when="code">
-        </div>
+    </div>
     </div>
 </div>
