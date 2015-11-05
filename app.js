@@ -10,7 +10,7 @@ var config = require('./config');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-mongoose.connect(config.mongoUri);
+// mongoose.connect(config.mongoUri);
 
 var app = express();
 
