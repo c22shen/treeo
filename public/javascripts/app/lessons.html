@@ -5,28 +5,24 @@
     </div> -->
     <div class="row" style="margin-top:80px">
         <div>
-
             <accordion close-others=false>
-                <accordion-group is-open="status" ng-repeat="lesson in currentClassContent" style="    border: none;
+                <accordion-group is-open="status" ng-repeat="lesson in currentClassContent" style="border: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; 
-    
     margin-bottom:10px;
     background: #5BC0DE">
-<!-- border-bottom: medium solid #0078D7; -->
-        
+                    <!-- border-bottom: medium solid #0078D7; -->
                     <accordion-heading style="background-color: transparent;">
-                    <span style="color:white">{{ getKey(lesson) }}</span>
+                        <span style="color:white">Lesson {{ $index }}</span>
                         <i class="pull-right glyphicon" style="color:white" ng-class="{'glyphicon-chevron-down': status, 'glyphicon-chevron-right': !status}"></i>
-
                     </accordion-heading>
                     <ul class="list-group">
                         <li ng-repeat="step in lesson[getKey(lesson)]" class="list-group-item" style="background: #5BC0DE; color:white">
                             {{step.title}}
                             <a class="pull-right" ui-sref="lesson({step: $index, lesson: $parent.$index, class: classChosen})"><i class="fa fa-arrow-circle-right" style="font-size:1.5em; color: white"></i>
 
-<!-- ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i> -->
+
                             </a>
                         </li>
                     </ul>
