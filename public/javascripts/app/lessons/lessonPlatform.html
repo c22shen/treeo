@@ -10,7 +10,6 @@
         <h1>{{currentLessonStep.title}}</h1>
         <p ng-bind-html="currentLessonStep.instruction"></p>
     </div>
-    {{currentLessonStep.type}}
     <div ng-controller="ModalController" class="col-sm-7 pull-right" style="margin-top:20px;" ng-switch on="currentLessonStep.type">
         <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
         <button type="button" class="btn btn-primary pull-right" ng-click="open()"> <i class="fa fa-search-plus"></i></button>
