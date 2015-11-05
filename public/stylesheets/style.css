@@ -48,7 +48,8 @@ body {
 .modal-content {
   height: 100%;
   border-radius: 0;
-  background: #212121;
+  background: white;
+  opacity:0.95;
 }
 
 .modal-body {
@@ -64,7 +65,9 @@ body {
   margin-left: 0;
 }
 
-
+a:hover {
+ cursor:pointer;
+}
 
 
 

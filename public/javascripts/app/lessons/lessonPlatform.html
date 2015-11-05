@@ -1,5 +1,4 @@
 <!-- <div ng-include src="'/javascripts/app/navbar.html'"></div> -->
-
 <!-- <div class="row">
     <div class="col-sm-12">
         <button ng-repeat="lesson in currentClassContent" type="button" style="margin: auto 10px" class="btn btn-primary btn-xs" ui-sref="lesson({step: 0, lesson: $index, class: classChosen})">{{lesson.lessonTitle}}</button>
@@ -7,28 +6,31 @@
 </div> -->
 <div class="row">
     <div class="col-sm-5" ng-style="myStyle" style="background: #5BC0DE; color:white; box-shadow: 5px 0px 3px #337AB7;">
+<!--                          <a class="pull-left" href="#home" style="color:#337AB7; font-size:1em"><b>TREEO</b></a> -->
         <h1 style="margin-top:50px">{{currentLessonStep.title}}</h1>
         <p style="margin-top:80px; font-size:1.2em" ng-bind-html="currentLessonStep.instruction"></p>
     </div>
-    <div ng-controller="ModalController" class="col-sm-7 pull-right" style="margin-top:50px;" ng-switch on="currentLessonStep.type">
-        <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
-        <!-- <button type="button" class="btn btn-primary pull-right" ng-click="open()"> <i class="fa fa-search-plus"></i></button> -->
-        <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
-
-            <video controls autoplay class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}">
-            </video>
-        </div>
-        <div ng-switch-when="youtube" class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}"></iframe>
-        </div>
+    <div ng-controller="ModalController" class="col-sm-7 pull-right" ng-switch on="currentLessonStep.type">
+        <a class=" pull-right" ng-click="open()"> <i class="fa fa-info-circle" style="font-size:2em; margin-top:15px; color:#337AB7"></i></a>
+        <section style="margin-top:50px">
+            <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
+            <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
+                <video controls autoplay class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}">
+                </video>
+            </div>
+            <div ng-switch-when="youtube" class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}"></iframe>
+            </div>
+        </section>
     </div>
 </div>
 </div>
-
 <div class="footer navbar-fixed-bottom">
-    <div class="container">
-    <div class="row text-center">
- <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="20" class="pagination-sm" boundary-links="false" rotate="false"></pagination>
-    </div>
-    </div>
+    <!-- <div class="container"> -->
+        <div class="row text-center">
+
+            <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="20" class="pagination-sm" boundary-links="false" rotate="false"></pagination>
+
+        </div>
+    <!-- </div> -->
 </div>
