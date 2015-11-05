@@ -30,6 +30,10 @@ body {
     /*color: white;*/
 }
 
+.panel-title {
+  font-size: 30px;
+}
+
 .progress {
   margin-bottom: 0;
 }
@@ -50,3 +54,4 @@ body {
 .modal-body {
     padding: 0;
   }
+

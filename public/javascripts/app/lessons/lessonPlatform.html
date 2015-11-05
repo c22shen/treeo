@@ -10,12 +10,13 @@
         <h1>{{currentLessonStep.title}}</h1>
         <p ng-bind-html="currentLessonStep.instruction"></p>
     </div>
+    {{currentLessonStep.type}}
     <div ng-controller="ModalController" class="col-sm-7 pull-right" style="margin-top:20px;" ng-switch on="currentLessonStep.type">
         <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
         <button type="button" class="btn btn-primary pull-right" ng-click="open()"> <i class="fa fa-search-plus"></i></button>
         <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
-            <video autoplay controls class="embed-responsive-item">
-                <source ng-src="{{trustSrc(currentLessonStep.location)}}">
+
+            <video controls autoplay class="embed-responsive-item" ng-src="{{trustSrc(currentLessonStep.location)}}">
             </video>
         </div>
         <div ng-switch-when="youtube" class="embed-responsive embed-responsive-16by9">
@@ -28,7 +29,7 @@
 <div class="footer navbar-fixed-bottom">
     <div class="container">
     <div class="row text-center">
- <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false"></pagination>
+ <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="20" class="pagination-sm" boundary-links="true" rotate="false"></pagination>
     </div>
     </div>
 </div>

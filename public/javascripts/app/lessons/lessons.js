@@ -9,7 +9,11 @@ angular
         // if (!loginStatus) {
         //     $state.go('login');
         // }
+        
         $rootScope.classChosen = $stateParams.class;
         $rootScope.stepIndexChosen = $stateParams.step;
         $rootScope.lessonIndexChosen = $stateParams.lesson;
+
+
+
     }])

@@ -5,17 +5,20 @@
     </div> -->
     <div class="row" style="margin-top:80px">
         <div>
+
             <accordion close-others=false>
-                <accordion-group is-open=true ng-repeat="lesson in currentClassContent" style="    border: none;
+                <accordion-group ng-repeat="lesson in currentClassContent" style="    border: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none; 
     border-bottom: medium solid #0078D7;">
-                    <accordion-heading style="background-color: transparent">
-                        {{lesson.lessonTitle}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': lesson.openModal, 'glyphicon-chevron-right': !lesson.openModal}"></i>
+
+        
+                    <accordion-heading style="background-color: transparent;">
+                        {{ getKey(lesson) }}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': lesson.openModal, 'glyphicon-chevron-right': !lesson.openModal}"></i>
                     </accordion-heading>
                     <ul class="list-group">
-                        <li ng-repeat="step in lesson.lessonSteps" class="list-group-item">
+                        <li ng-repeat="step in lesson[getKey(lesson)]" class="list-group-item">
                             {{step.title}}
                             <a class="pull-right" ui-sref="lesson({step: $index, lesson: $parent.$index, class: classChosen})"><i class="fa fa-arrow-circle-right" style="font-size:1.5em; color: #0078D7"></i></a>
                         </li>
