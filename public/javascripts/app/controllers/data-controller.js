@@ -1665,17 +1665,22 @@ angular
                         "instruction": "Hopefully you have something like this. <br><br> If wasn't too hard was it? In case you are wondering, I was using the keyboard shortcut to copy(ctrl+c) and paste(ctrl+v) the motor block, just to make things a little faster :p",
                         "location": "https://www.youtube.com/embed/jaEPRknihwE?rel=0&amp;showinfo=0"
                     }, {
-                        "title": "Are we done?",
+                        "title": "Is it working yet?",
+                        "type": "image",
+                        "instruction": "So we now finished setting up our switch block, can we now successfully remote control the robot using the remote? <br><br> No not yet. The switch will check ONCE to see if any buttons are pressed, and execute the motor block ONCE if any buttons are pressed. The motor block is in on mode, and it will only run for a split second, and not move much at all.<br><br> We must use a loop so this sequence of action is always running over and over. So really the movement of the robot is made up of a bunch of tiny movements, instead of one big motion.",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446907064/mindstorm_l6_s16_shf9o9.png"
+                    },{
+                        "title": "Switch statement within a loop",
                         "type": "youtube",
-                        "instruction": "So we now finished setting up our switch block, can we now successfully remote control the robot using the remote? <br><br> Find out by watching this video.",
-                        "location": "https://www.youtube.com/embed/XVJ9K-f-Vv8?list=PLFd4sjeVCkV9hATGDPD6W_z7igg9fFCam&amp;showinfo=0"
+                        "instruction": "Easier said then done. Let's see how we can add in the loop to our existing program.",                        
+                        "location": "https://www.youtube.com/embed/HPiJtLfM5YQ?rel=0&amp;showinfo=0"
                     }, {
                         "title": "Everyone gets their own channel",
                         "type": "image",
-                        "instruction": "Make sure the channel set on our remote (1-4) is the same as the channel number we set on our Lego ev3 code.<br><br>Don't forget about this, else someone else might be controlling your robot, instead of their own! <br><br>Talk to each other, make sure everyone is using a unique channel.",
+                        "instruction": "Make sure the channel set on our remote (1-4) is the same as the channel number we set on our Lego ev3 code.<br><br>Don't forget about this, else someone else might be controlling your robot, instead of their own! <br><br>Talk to each other, make sure everyone is using a unique channel. <br><br> Verify your code with the instructor, then download the code into your robot and try it out!",
                         "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446892409/mindstorm_l6_s17_cyubah.png"
                     },{
-                        "title": "Awesome job! ",
+                        "title": "Great work! Congratulations",
                         "type": "image",
                         "instruction": "Have a bit of fun playing around with your remote control robot, you deserve it :)",                        
                         "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson4/1-1.jpg"
@@ -1702,7 +1707,7 @@ angular
                     }, {
                         "title": "Plan before everything!",
                         "type": "image",
-                        "instruction": "For any task, big or small, it is most important to have a general plan outlining the big steps required to complete the task. <br><br> Here is mine. Can you come up with something better?",                        
+                        "instruction": "For any task, big or small, it is most important to have a general plan outlining the big steps required to complete the task. <br><br> Here is mine. The robot will move forward, and steer itself left and right depending on the position of the remote. A loop is added so it is constantly checking the relative position of the remote, and changing its direction accordingly. <br><br>Can you come up with something better?",                        
                         "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446903972/mindstorm_l6_s21_tydbn9.png"
                     }, {
                         "title": "Don't know where to get started?",
