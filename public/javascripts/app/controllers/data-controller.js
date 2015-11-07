@@ -1597,7 +1597,7 @@ angular
                     }, {
                         "title": "Interesting video of the day!",
                         "type": "youtube",
-                        "instruction": "Didn't think making those lego pieces would be this hard did you? :)",
+                        "instruction": "Didn't think making those lego pieces would be this hard did you? :) <br><br>If you are with friends, don't watch the video alone. Let's all gather on one computer, turn on the sound, and enjoy the show!",
                         "location": "https://www.youtube.com/embed/whv-krWnq0g?rel=0&amp;showinfo=0"
                     }, {
                         "title": "The Remote IR Beacon",
@@ -1615,28 +1615,107 @@ angular
                         "instruction": "For today's task, we need to perform different actions based on which button is pressed. When we need to make a decision like that, we use the switch block. <br><br> The idea behind switch is very simple: if it is raining today, bring an umbrella; if it is snowing today, wear your winter coat! <br><br>Switch statements can make a decision based on many conditions, so let's put it to good use for our robot.",
                         "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446865584/mindstorm_l6_s5_bwbrjp.png"
                     }, {
-                        "title": "Switch block review: How do we add more conditions?",
+                        "title": "Switch block review1: How do we add more conditions?",
                         "type": "image",
                         "instruction": "If our robot only handles two options such as go forward or backwards, it wouldn't be a very interesting robot. <br><br> We need our switch statement to handle multiple cases such as turning left and right. <br><br> We can click on the plus button on the switch block to have more cases to play with. ",
                         "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446866897/mindstorm_l6_s6_kd6zrs.png"
                     }, {
-                        "title": "2-2: Loop Interrupt",
-                        "type": "video",
-                        "instruction": "To stop a loop in the middle, we can use the loop interrupt!<br><br>To use the loop interrupt, all we have to do is add the loop interrupt block to our program.<br><br>You will also need to make sure the loop specified on the loop interrupt block is the same as the name of your loop (in this case, the loop we want to stop it 01, and we made sure our interrupt is set to stop loop 01 as well.",
-                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson5/2-2.mp4"
-                    }, {
-                        "title": "2-3: Task 2 - Stopping at the red",
-                        "type": "video",
-                        "instruction": "Using what you learned about loop interrupt, add to your line follower program so that when the <b>color sensor</b> detects a <b>red</b> color as it goes along the track, it stops.<br><br>If you are stuck, call the instructor over for help!<br><br>When you are done, call the instructor over to confirm.",
-                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson5/2-3.mp4"
-                    }, {
-                        "title": "3-1: Task Complete",
+                        "title": "Switch block review2: what if none of the conditions are true?",
                         "type": "image",
-                        "instruction": "Congrats!<br><br>You were able to improve your line follower bot by having it go straight when it doesn't need to zig zag. This greatly improves your robot's speed!<br><br>You also learned about loop interrupts and how it can help you exit a loop when needed.<br><br>Good work today! See you next class.",
-                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson5/3-1.png"
+                        "instruction": "There are times when you might ask your friend: what do you like to play? Basketball or Soccer? And it turns out he doesn't like any of them. What do we do then?  <br><br> When we use the switch block, and none of the conditions meet, the default condition is activated. <br><br> It is set by clicking on the circle on top of the condition you want to set as default. <br><br> Make sure to set your default condition!",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446869466/mindstorm_l6_s7_cyi57x.png"
+                    }, {
+                        "title": "What's the remote saying?",
+                        "type": "image",
+                        "instruction": "In order to get the correct information, we need to ask the right question. <br><br> Make sure to set the switch block to check the information coming back from the remote, as shown in the picture.",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446870718/mindstorm_l6_s8_iynqpo.png"
+                    }, {
+                        "title": "Let's put it all together",
+                        "type": "youtube",
+                        "instruction": "Clear? Confused? <br><br>Don't worry, if you forgot how switch works, or just want to watch a video, here is a quick summary of the main points covered.",
+                        "location": "https://www.youtube.com/embed/EkrieBOQZF4?rel=0&amp;showinfo=0"
+                    }, {
+                        "title": "Action - Reaction",
+                        "type": "image",
+                        "instruction": "Our robot should do the following actions when the designated button(s) are pressed: <br><br> <li>Button 1: Turn left</ul> <li>Button 3: Turn right</li> <li>Button 2: Turn left backwards</li> <li>Button 4: Turn right backwards</li><li>Button 1 and 3: Go forward</li><li>Button 2 and 4: Go backwards</li><br><li><b>No button pressed? Stay still!<b><i></li>",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446876427/mindstorm_l6_s10_h98c5r.png"
+                    }, {
+                        "title": "Stay still unless I tell you so",
+                        "type": "youtube",
+                        "instruction": "The worst thing that can happen is a crazy robot that moves around without telling it to do so. <br><br> Let's make sure our robot stays still when no button is pressed, by using the default case on the switch block.<br><br>Use a Move Steering motor block in off mode to stop a robot from moving.",
+                        "location": "https://www.youtube.com/embed/0Bc8RohDjkc?rel=0&amp;showinfo=0"
+                    }, {
+                        "title": "Let's make it move: Turn left",
+                        "type": "youtube",
+                        "instruction": "It's finally time to make our robot move! Follow the video, and make the robot turn left when the upper left button on the remote is pressed.",
+                        "location": "https://www.youtube.com/embed/PgkltR3HBjY?rel=0&amp;showinfo=0"
+                    }, {
+                        "title": "Move Steering Motor",
+                        "type": "image",
+                        "instruction": "Motor block is one of the most important tools, because it makes the robot move! Moving Steering block is a very popular tool, because it can control both motors at once to control the robot speed and direction.<br><br> Setting the motor block to the 'ON' mode will perform it's action for a split section, while other modes such as 'On for seconds' will perform it's movement fo the amount of time specified.<br><br> The number under the arrow determines the direction of the robot, while the number under the 'dashboard' image decides the speed. <br><br>Hint: if we want the opposite direction, try negative sign.",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446886267/mindstorm_i6_s12_yoqmyv.jpg"
+                    }, {
+                        "title": "Move Steering Motor",
+                        "type": "image",
+                        "instruction": "Now you have the power to do the rest! Give it try and apply the other actions in the switch statement. <br><br>Feel free to discuss with your classmates, or go back and look at the previous videos. <br><br> <li>Button 3: Turn right</li> <li>Button 2: Turn left backwards</li> <li>Button 4: Turn right backwards</li><li>Button 1 and 3: Go forward</li><li>Button 2 and 4: Go backwards</li>",
+                        "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson6/x.jpg"
+                    }, {
+                        "title": "How did you do?",
+                        "type": "youtube",
+                        "instruction": "Hopefully you have something like this. <br><br> If wasn't too hard was it? In case you are wondering, I was using the keyboard shortcut to copy(ctrl+c) and paste(ctrl+v) the motor block, just to make things a little faster :p",
+                        "location": "https://www.youtube.com/embed/jaEPRknihwE?rel=0&amp;showinfo=0"
+                    }, {
+                        "title": "Are we done?",
+                        "type": "youtube",
+                        "instruction": "So we now finished setting up our switch block, can we now successfully remote control the robot using the remote? <br><br> Find out by watching this video.",
+                        "location": "https://www.youtube.com/embed/XVJ9K-f-Vv8?list=PLFd4sjeVCkV9hATGDPD6W_z7igg9fFCam&amp;showinfo=0"
+                    }, {
+                        "title": "Everyone gets their own channel",
+                        "type": "image",
+                        "instruction": "Make sure the channel set on our remote (1-4) is the same as the channel number we set on our Lego ev3 code.<br><br>Don't forget about this, else someone else might be controlling your robot, instead of their own! <br><br>Talk to each other, make sure everyone is using a unique channel.",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446892409/mindstorm_l6_s17_cyubah.png"
+                    },{
+                        "title": "Awesome job! ",
+                        "type": "image",
+                        "instruction": "Have a bit of fun playing around with your remote control robot, you deserve it :)",                        
+                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson4/1-1.jpg"
+                    }, {
+                        "title": "Bonus challenge! Following the remote IR beacon",
+                        "type": "cover",
+                        "instruction": "Have a bit of fun playing around with your remote control robot, you deserve it :)",                        
+                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson4/1-1.jpg"
+                    }, {
+                        "title": "Let's play tag!",
+                        "type": "image",
+                        "instruction": "By using the IR sensor in Measure Beacon Mode, we can make our robot follow the Remote IR Beacon. <br><br> We will make our robot drive toward the remote by itself!<br><br>Think about this concept as a search and rescue mission, where the remote acts as a landmark that the robot tries to find and retrieve. <br><br>Or better yet, if you hold the remote in your hands, the robot will start following you!",                        
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446901350/goku_chase_gzhcze.jpg"
+                    }, {
+                        "title": "Infrared sensor in beacon mode",
+                        "type": "image",
+                        "instruction": "The infrared sensor in beacon mode has 3 set of information: <br> <br> <li>Distance: 0 being the nearest, 100 being the farthest. </li><li>Heading: -25 is extreme left, while 25 is exreme right. 0 is right in front.</li> <li>Detected shows if the remote can be discovered at all.</li> <br><br> To start off simple, we will look purely at the heading info, and steer the robot toward the remote.",                        
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446899099/mindstorm_l6_s20_kx0u9m.png"  
+                    }, {
+                        "title": "Set infrared sensor in beacon mode",
+                        "type": "image",
+                        "instruction": "The infrared remote can be set to 'Beacon Mode' by pressing the big button: button 9 at the top. Make sure you don't press any other button after that. <br><br> Also make sure the channel(slider button 12) is set to the same one in your code, and all robots are using a unique channel. ",                        
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446876427/mindstorm_l6_s10_h98c5r.png"  
+                    }, {
+                        "title": "Plan before everything!",
+                        "type": "image",
+                        "instruction": "For any task, big or small, it is most important to have a general plan outlining the big steps required to complete the task. <br><br> Here is mine. Can you come up with something better?",                        
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446903972/mindstorm_l6_s21_tydbn9.png"
+                    }, {
+                        "title": "Don't know where to get started?",
+                        "type": "youtube",
+                        "instruction": "I will start with a switch statement within a loop. So it is continuously making decisions whether to turn left or right. <br><br> Now it's your turn. Finish off the program and test it out! Don't be shy to discuss your ideas with your classmates or instructor. <br><br> May the force be with you.",                        
+                        "location": "https://www.youtube.com/embed/3oHIEKMHrGc?rel=0&amp;showinfo=0"
+                    }, {
+                        "title": "How do we make it better?",
+                        "type": "image",
+                        "instruction": "If you reached here, then I guess you figured out the bonus challenge. Congratulations! <br><br> There are many ways to improve the system. Imagine what if the remote is behind the infrared sensor, and the robot cannot detect it? Can we make the robot stop right at the remote, instead of passing right by? The zigzag motion seems a bit strange... can we fix that? <br><br> The power is in your hands, put it to good use. Until next time.",                        
+                        "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson6/x.jpg"
                     }]
                 }
-
 
 
 

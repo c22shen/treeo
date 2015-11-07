@@ -18,13 +18,14 @@
                         <i class="pull-right glyphicon" style="color:white" ng-class="{'glyphicon-chevron-down': status, 'glyphicon-chevron-right': !status}"></i>
                     </accordion-heading>
                     <ul class="list-group">
-                        <li ng-repeat="step in lesson[getKey(lesson)]" class="list-group-item" style="background: #5BC0DE; color:white">
+                    <a class="" ng-repeat="step in lesson[getKey(lesson)]" ui-sref="lesson({step: $index, lesson: $parent.$index, class: classChosen})">
+                        <li class="list-group-item" style="background: #5BC0DE; color:white">
+
                             {{step.title}}
-                            <a class="pull-right" ui-sref="lesson({step: $index, lesson: $parent.$index, class: classChosen})"><i class="fa fa-arrow-circle-right" style="font-size:1.5em; color: white"></i>
-
-
-                            </a>
+                            <i class="fa fa-arrow-circle-right pull-right" style="font-size:1.5em; color: white"></i>
+                            <span ng-if="$index===0" class="badge">Start here!</span>
                         </li>
+                    </a>
                     </ul>
                 </accordion-group>
             </accordion>
