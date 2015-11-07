@@ -1,12 +1,12 @@
-<!-- <div ng-include src="'/javascripts/app/navbar.html'"></div> -->
-<!-- <div class="row">
-    <div class="col-sm-12">
-        <button ng-repeat="lesson in currentClassContent" type="button" style="margin: auto 10px" class="btn btn-primary btn-xs" ui-sref="lesson({step: 0, lesson: $index, class: classChosen})">{{lesson.lessonTitle}}</button>
-    </div>
-</div> -->
-<div class="row">
+<div class="row" ng-if="currentLessonStep.type === 'cover'" ng-style="myStyle"  style="background: #5BC0DE; color:white;">
+
+
+    <h1 class="text-center" ng-style="lineHeightStyle">{{currentLessonStep.title}}</h1>
+</div>
+
+<div class="row" ng-if="currentLessonStep.type !== 'cover'">
     <div class="col-sm-5" ng-style="myStyle" style="background: #5BC0DE; color:white; box-shadow: 5px 0px 3px #337AB7;">
-<!--                          <a class="pull-left" href="#home" style="color:#337AB7; font-size:1em"><b>TREEO</b></a> -->
+        <!--                          <a class="pull-left" href="#home" style="color:#337AB7; font-size:1em"><b>TREEO</b></a> -->
         <h1 style="margin-top:50px">{{currentLessonStep.title}}</h1>
         <p style="margin-top:80px; font-size:1.2em" ng-bind-html="currentLessonStep.instruction"></p>
     </div>
@@ -27,10 +27,8 @@
 </div>
 <div class="footer navbar-fixed-bottom">
     <!-- <div class="container"> -->
-        <div class="row text-center">
-
-            <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="10" class="pagination-sm" boundary-links="false" rotate="false"></pagination>
-
-        </div>
+    <div class="row text-center">
+        <pagination total-items="progressLessonStepTotal" items-per-page="1" ng-model="$parent.stepIndexChosenPagination" max-size="10" class="pagination-sm" boundary-links="false" rotate="false"></pagination>
+    </div>
     <!-- </div> -->
 </div>

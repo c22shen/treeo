@@ -8,7 +8,10 @@ angular
         // }
         var h;
                   $rootScope.windowHeight = h;
-          $rootScope.myStyle = {height:h};
+          // $rootScope.myStyle = {height:h};
+
+          $rootScope.lineHeightStyle={};
+          $rootScope.lineHeightStyle['line-height'] = h+'px';
         angular.element($window).on('resize', function() {
             $scope.$apply();
         })
@@ -23,6 +26,7 @@ angular
           $rootScope.windowHeight = h;
           var heightValue = h+'px';
           $rootScope.myStyle = {height:heightValue};
+          $rootScope.lineHeightStyle['line-height'] = h+'px';
         }
         $rootScope.stepIndexChosen = $stateParams.step;
         $rootScope.lessonIndexChosen = $stateParams.lesson;
@@ -1584,7 +1588,59 @@ angular
                         "instruction": "Congrats!<br><br>You were able to improve your line follower bot by having it go straight when it doesn't need to zig zag. This greatly improves your robot's speed!<br><br>You also learned about loop interrupts and how it can help you exit a loop when needed.<br><br>Good work today! See you next class.",
                         "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson5/3-1.png"
                     }]
-                }]
+                },
+
+{
+                    "lesson_6": [{
+                        "title": "Let's control our robot using a remote controller!",
+                        "type": "cover"
+                    }, {
+                        "title": "Interesting video of the day!",
+                        "type": "youtube",
+                        "instruction": "Didn't think making those lego pieces would be this hard did you? :)",
+                        "location": "https://www.youtube.com/embed/whv-krWnq0g?rel=0&amp;showinfo=0"
+                    }, {
+                        "title": "The Remote IR Beacon",
+                        "type": "image",
+                        "instruction": "This component allows you to send commands to your robot just as you send commands to a television with a remote control!<br> <br> The IR Sensor can also estimate its distance and orientation with respect to the Remote IR Beacon. <br><br> This cool feature will allow you do fun things with your robots like play tag, chase prey, or locate and reach a mission base.",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446862519/mindstorm_l6_s3_ruecxp.jpg"
+                    }, {
+                        "title": "What exact steps are involved to remote control our robot?",
+                        "type": "image",
+                        "instruction": "In order to solve a complex problem, it is important to know the major steps that is involved. <br><br> When a button is pressed on the remote, information is sent out wirelessly, and received by the Infrared Sensor. <br><br> The Infrared Sensor receives the information and passes it to the 'brain' of the robot: the EV3 Brick. <br><br> The ev3 brick will tell its 'arm' or 'leg': the motor what direction to go into, and there you go, we have our own remote controlled robot! ",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446864747/mindstorm_l6_s4_an8wyo.png"
+                    }, {
+                        "title": "Making decisions? Switch statments to the rescue!",
+                        "type": "image",
+                        "instruction": "For today's task, we need to perform different actions based on which button is pressed. When we need to make a decision like that, we use the switch block. <br><br> The idea behind switch is very simple: if it is raining today, bring an umbrella; if it is snowing today, wear your winter coat! <br><br>Switch statements can make a decision based on many conditions, so let's put it to good use for our robot.",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446865584/mindstorm_l6_s5_bwbrjp.png"
+                    }, {
+                        "title": "Switch block review: How do we add more conditions?",
+                        "type": "image",
+                        "instruction": "If our robot only handles two options such as go forward or backwards, it wouldn't be a very interesting robot. <br><br> We need our switch statement to handle multiple cases such as turning left and right. <br><br> We can click on the plus button on the switch block to have more cases to play with. ",
+                        "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1446866897/mindstorm_l6_s6_kd6zrs.png"
+                    }, {
+                        "title": "2-2: Loop Interrupt",
+                        "type": "video",
+                        "instruction": "To stop a loop in the middle, we can use the loop interrupt!<br><br>To use the loop interrupt, all we have to do is add the loop interrupt block to our program.<br><br>You will also need to make sure the loop specified on the loop interrupt block is the same as the name of your loop (in this case, the loop we want to stop it 01, and we made sure our interrupt is set to stop loop 01 as well.",
+                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson5/2-2.mp4"
+                    }, {
+                        "title": "2-3: Task 2 - Stopping at the red",
+                        "type": "video",
+                        "instruction": "Using what you learned about loop interrupt, add to your line follower program so that when the <b>color sensor</b> detects a <b>red</b> color as it goes along the track, it stops.<br><br>If you are stuck, call the instructor over for help!<br><br>When you are done, call the instructor over to confirm.",
+                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson5/2-3.mp4"
+                    }, {
+                        "title": "3-1: Task Complete",
+                        "type": "image",
+                        "instruction": "Congrats!<br><br>You were able to improve your line follower bot by having it go straight when it doesn't need to zig zag. This greatly improves your robot's speed!<br><br>You also learned about loop interrupts and how it can help you exit a loop when needed.<br><br>Good work today! See you next class.",
+                        "location": "https://s3-us-west-2.amazonaws.com/treeo/lego1/lesson5/3-1.png"
+                    }]
+                }
+
+
+
+
+                ]
             };
 
 
