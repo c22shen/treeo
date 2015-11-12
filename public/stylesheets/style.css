@@ -69,6 +69,21 @@ a:hover {
  cursor:pointer;
 }
 
+.cursorHand {
+ cursor:pointer; 
+}
+
+.red {
+  color:red;
+}
+
+.black {
+  color:black;
+}
+
+.selected { 
+  color:#5BC0DE;
+}
 
 
 
