@@ -11,7 +11,7 @@ angular
         $rootScope.selectedAnswers = [];
         $scope.questionsTotal = 0;
         $scope.questionsCorrect = 0;
-        $rootScope.maxStepIndex= 0;
+        $rootScope.maxStepIndex = 0;
         // $rootScope.myStyle = {height:h};
 
 
@@ -32,7 +32,7 @@ angular
             $rootScope.selectedAnswers = [];
             $rootScope.answerResult = [];
             $rootScope.answerArr = [];
-            !!$rootScope.currentLessonStep ? $rootScope.currentLessonStep.answer=null : null ;
+            !!$rootScope.currentLessonStep ? $rootScope.currentLessonStep.answer = null : null;
 
 
         }
@@ -1083,11 +1083,109 @@ angular
                             "instruction": "Okay students, we've learned a lot of new things today and we are well on our way to making our apple catching program. Until next time!",
                             "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson6/5.png"
                         }]
+                    }, {
+                        "lesson_7": [{
+                            "title": "1-1: Lesson 7 - Clones In Scratch",
+                            "type": "image",
+                            "instruction": "Hi everyone! Welcome to Lesson 7 of Scratch I with Treeo Academy.<br><br>Today you will continue to expand your knowledge of programming by learning a concept called <b>cloning</b>. Using this new knowledge, you will be able to make a pretty neat game!<br><br>Click <b>next</b> to get started!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/0.jpg"
+                        }, {
+                            "title": "1-2: Catch Apples Game",
+                            "type": "video",
+                            "instruction": "We will be using a programming concept called <b>clones</b> to make an apple catching program!<br><br>Play the video to see what game you will be able to make at the end of the this lesson!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/1.mp4"
+                        }, {
+                            "title": "1-3: What is a Clone?",
+                            "type": "video",
+                            "instruction": "You've probably heard of the word <b>clone</b> before somewhere. In programming, a clone is simply a duplicate copy of a Sprite. You can have one clone or many clones of the same Sprite!<br><br>A clone shares the same script (code), costumes, sounds, and properties as the original Sprite.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/2.mp4"
+                        }, {
+                            "title": "1-4: Using Clones",
+                            "type": "video",
+                            "instruction": "In order to use the clone feature in Scratch, you must:<br><br><ol><li>Create a clone</li><li>Tell the newly created clone what to do</li></ol><br>You can find both of these programming blocks under the <b>Control</b> section.<br><br>As you can see from the video, although there is only 1 Ball Sprite, we've managed to create many clones!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/3.mp4"
+                        }, {
+                            "title": "1-5: Using Clones - Part 2",
+                            "type": "video",
+                            "instruction": "Clones share the same costumes, sounds, and properties as the original Sprite, so each clone can behave a little differently!<br><br>For example, each clone can have its own color by switching to a different costume. Try it out!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/4.mp4"
+                        }, {
+                            "title": "1-6: Exercise 2 - Catch Apples",
+                            "type": "video",
+                            "instruction": "Now we are ready to begin making our program!<br><br>To save you time, click <a href='https://scratch.mit.edu/projects/86884733/' target='_blank'>HERE</a> to navigate to the project and add it to your account. There is no code in this project, but there are Sprites and costumes pre-made for you already.<br><br>To add another person's project to your profile, you need to first click on the blue <b>See Inside</b> button to view their code. Then you need to click on the orange <b>remix</b> button to add it to your profile.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/5.mp4"
+                        }, {
+                            "title": "1-7: Exercise 2 - Catch Apples (Part 2)",
+                            "type": "video",
+                            "instruction": "The first thing you need to do is program the wagon so that it moves right when you press the right arrow key on the keyboard and moves left when you press the left arrow key on the keyboard.<br><br><b>TASK:</b><br><br>By now you have all the knowledge you need to do this, so give it a try!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/6.mp4"
+                        }, {
+                            "title": "1-8: Exercise 2 - Catch Apples (Part 3)",
+                            "type": "video",
+                            "instruction": "Hopefully that wasn't too difficult. Your code for the Wagon Sprite should look like this.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/7.mp4"
+                        }, {
+                            "title": "1-9: Exercise 2 - Catch Apples (Part 4)",
+                            "type": "video",
+                            "instruction": "Next, we are going to move on to the Apple Sprite.<br><br><b>TASK:</b><br><br>Your first task is to make the apple appear at a random x-point at the top of the screen (y = 180) and continuously fall down until it reaches the ground.<br><br>Once the apple reaches the ground, use the <b>stop all</b> block under the <b>Control</b> section to end the program.<br><br><b>HINT:</b><br><br>You can use the <b>repeat until</b> block under the <b>Control</b> section to check if the apple has reached the ground or not (in order words, has the y-point fallen below a certain point?). This loop will keep running <b>until</b> the condition inside is no longer true.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/8.mp4"
+                        }, {
+                            "title": "1-10: Exercise 2 - Catch Apples (Part 5)",
+                            "type": "video",
+                            "instruction": "Did you get it? If you did, that's AWESOME! If not, don't worry, it was a difficult program to make.<br><br>Here is the solution.<br><br>Every time you click on the green flag, the apple should start at a different location at the top of the screen and fall down!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/9.mp4"
+                        }, {
+                            "title": "1-11: Exercise 2 - Catch Apples (Part 6)",
+                            "type": "video",
+                            "instruction": "<b>TASK:</b><br><br>Now that you've seen how to make a single apple fall down from the sky at a random location, do you think you can use the <b>create a clone of myself</b> block and the <b>when I start as a clone</b> block to produce the effect shown in this video?<br><br>Go ahead, challenge yourself! Remember, when the apples falls to the ground, you should use the <b>delete this clone</b> block to delete it.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/10.mp4"
+                        }, {
+                            "title": "1-12: Exercise 2 - Catch Apples (Part 7)",
+                            "type": "video",
+                            "instruction": "Your code should probably look something to this. Notice that you need to change the <b>stop all</b> block to <b>delete this clone</b> because if you don't, your code will stop running after the first clone touches the floor!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/11.mp4"
+                        }, {
+                            "title": "1-13: Exercise 2 - Catch Apples (Part 8)",
+                            "type": "video",
+                            "instruction": "Now that you can control the movement of your wagon with the keyboard and you know that the apple falls randomly from the sky, it's time to make them interact with each other!<br><br>We need to have a scoring system set up and increase the score by 1 every time the wagon catches the apple, like the video shown.<br><br><b>TASK:</b><br><br>Try and see if you can program this feature.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/12.mp4"
+                        }, {
+                            "title": "1-14: Exercise 2 - Catch Apples (Part 9)",
+                            "type": "video",
+                            "instruction": "Hopefully you realized that you need to:<br><br><ol><li>Create a variable to keep track of the score</li><li>Use the <b>touching []?</b> block to sense if the apple touches the wagon</li></ol><br><br><b>NOTE:</b><br>The reason we put the <b>if-statement</b> inside the <b>repeat until</b> loop is because until the apple falls to the ground, we need to constantly check to see if the wagon caught the apple or not.<br><br>We also need to delete the clone within the <b>if-statement</b> because otherwise, the score will increase by 1, but the apple will continue to fall down until it touches the ground instead of falling inside the wagon.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/13.mp4"
+                        }, {
+                            "title": "1-15: Exercise 2 - Catch Apples (Part 10)",
+                            "type": "video",
+                            "instruction": "By now, you have a fully working program. Congrats! But we are not done yet.<br><br>To make the game more interesting, what if 1 in every 4 apples is rotten and you must avoid catching the rotten apples? If you caught a rotten apple, your score should decrease by 1. This is just one of the many features that your game can have.<br><br>Have a look at the video!<br><br><b>HINT:</b><br><br>You need to create another variable that has a 1 in 4 chance of being rotten. The <b>pick random</b> block will get you achieve this, but you need to figure out how to tweak the program to make it work.<br><br>You also need to change the costume of the apple to the rotten costume if the apple is rotten.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/14.mp4"
+                        }, {
+                            "title": "1-16: Exercise 2 - Catch Apples (Part 11)",
+                            "type": "video",
+                            "instruction": "This was probably the most challenging part of the game, but hopefully you realized that you can use the <b>pick random</b> block to randomly pick a number between 1 to 4.<br><br>Then, we can say that whenever the random number is <b>1</b>, then we can treat that as being rotten.<br><br>Since we already have the program to increase the score when we catch a ripe apple, we just need to add another case to decrease the score when we catch a rotten apple. That's not so hard, right?",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/15.mp4"
+                        }, {
+                            "title": "1-17: Exercise 2 - Troubleshooting",
+                            "type": "video",
+                            "instruction": "So you may have noticed if a ripe apple is falling from the sky and a rotten apple appears, then it causes the ripe apple to change color. Why is that?<br><br>That's because our code checks the variable <b>rotten</b> to determine if the apple is rotten, but all clones of the apple check the SAME variable. So while the variable might be set to <b>not rotten</b> at one time, it can change to <b>rotten</b> a few seconds later, which then affects ALL apples on the screen.<br><br>Watch the next video to see how to fix this issue.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/16.mp4"
+                        }, {
+                            "title": "1-18: Exercise 2 - Troubleshooting (Part 2)",
+                            "type": "video",
+                            "instruction": "So the reason all of our apples changed color at the same time was because they all checked the SAME variable <b>rotten</b> to determine if they are rotten or not. When the variable changes, it affects ALL clones of the apple at once.<br><br>To fix this, we need to create the <b>rotten</b> variable so that each clone of the apple has its own variable instead of having to share just one variable between all the clones.<br><br>Then, we need to delete any blocks that used the previous <b>rotten</b> variable and replace it with the newly created <b>rotten</b> variable. <b>This step is very important.</b>",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/17.mp4"
+                        }, {
+                            "title": "1-19: Program Fixed!",
+                            "type": "video",
+                            "instruction": "Now your program should be fixed! Ripe apples and rotten apples should appear together on the screen and the apples shouldn't all change colors suddenly like they did before. Nice!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/18.mp4"
+                        }, {
+                            "title": "1-20: Lesson Complete",
+                            "type": "image",
+                            "instruction": "Okay students, we've learned a lot of new things today and you should be proud of what you accomplished!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/5.png"
+                        }]
                     }
-
-
-
-
                 ],
                 "mindstorm": [{
                         "lesson_1": [{
@@ -1979,12 +2077,12 @@ angular
                                 "type": "youtube",
                                 "instruction": "If the sensor can detect the remote beacon, then follow the beacon, if not, then just stay till. <br><br> If you hear if statements like this, the block that should pop in your head is the switch block.<br><br> Let's set up a switch statement for our steering motor.",
                                 "location": "https://www.youtube.com/embed/Gujr9ceR-Fk?rel=0&amp;showinfo=0"
-                            },{
+                            }, {
                                 "title": "What went wrong in the previous video? Select all that applies.",
                                 "type": "quiz:all",
                                 "questions": "Switch statement should be placed at the beginning instead of the end| All the data wires on the steering motor are gone after it was moved into the switch block | The switch statement cannot be set to infrared sensor in beacon mode | Nothing's wrong, all's perfect",
                                 "answer": "1,2"
-                            },{
+                            }, {
                                 "title": "Oh no, all our hard work is gone!",
                                 "type": "image",
                                 "instruction": "if you paid close attention to the video, you'll notice that when we moved the motor into the switch block, all the data wires are removed. <br><br> Also, when we check the possible check conditions for a switch block, the infrared sensor in beacon mode is nowhere to be seen. <br><br> What do we do?",
@@ -2010,12 +2108,12 @@ angular
                                 "type": "youtube",
                                 "instruction": "Hopefully you realized that this switch statement will only run once with the current setup. <br><br> We need to apply our favourite loop statement, so the switch statement will check the sensor reading over and over again, so the robot will continue to follow the remote beacon.<br><br> Watch the video for the last episode, and yes you may have to reconnect the data wires, but this is a piece of cake for you now right?",
                                 "location": "https://www.youtube.com/embed/f6ESUpb-G0E?rel=0&amp;showinfo=0"
-                            },{
-                            "title": "Try it out!",
-                            "type": "image",
-                            "instruction": "That was a lot of hard work we put in, good job! Let's try it out, and see if it is able to follow our robot. Make sure the <b>channel</b> you set on the sensor is different than everyone else's, and the wire cable is connected correctly. <br><br> Other things you can think about: How can we make it spin around searching for the remote control, if it cannot detect it? <br><br> Can we make the robot follow the remote control at a certain distance(hint: math block)? Give it try, and see you soon.",
-                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson6/x.jpg"
-                        }
+                            }, {
+                                "title": "Try it out!",
+                                "type": "image",
+                                "instruction": "That was a lot of hard work we put in, good job! Let's try it out, and see if it is able to follow our robot. Make sure the <b>channel</b> you set on the sensor is different than everyone else's, and the wire cable is connected correctly. <br><br> Other things you can think about: How can we make it spin around searching for the remote control, if it cannot detect it? <br><br> Can we make the robot follow the remote control at a certain distance(hint: math block)? Give it try, and see you soon.",
+                                "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson6/x.jpg"
+                            }
 
 
 
@@ -2029,10 +2127,10 @@ angular
 
                             // Math block on the distance, minus. Let them think about it!
 
-                             // if not detected, spin around in one place! 
+                            // if not detected, spin around in one place! 
 
                             // give your self pad on the back, this is a very complex program!
-// improvement, using average filter
+                            // improvement, using average filter
 
 
                         ]
