@@ -6,6 +6,8 @@
     margin-top: 0.5em;
     z-index: 2;
     " ng-click="openLesson()"></i>
+
+    <!-- <i class="fa a-thumbs-up"></i> -->
 </div>
 <div class="row" ng-if="currentLessonStep.type === 'cover'" ng-style="myStyle" style="background: #5BC0DE; color:white;">
     <h1 class="text-center" ng-style="lineHeightStyle">{{currentLessonStep.title}}<button type="button" style="margin-left:1em; margin-bottom:10px" class="btn btn-primary btn-lg" ng-click="nextPage()">Start Now</button></h1>

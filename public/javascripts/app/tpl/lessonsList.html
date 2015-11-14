@@ -21,10 +21,13 @@
     font-size: 1em;
     overflow: hidden;
     white-space: nowrap;
-    height:25px">
+    height:24px">
         <div class="" style="">
-            <a style="margin-left:0.5em" ng-bind-html="selection.title" ui-sref="lesson({step: $index, lesson: lessonIndexChosen, class: classChosen})" ng-if="$index <= maxStepIndex " ng-click="ok()"></a>
-            <span style="margin-left: 0.5em" ng-bind-html="selection.title" ng-hide="$index <= maxStepIndex"> </span>
+        	<span ng-if="$index <= maxStepIndex "> 
+        	<i style="color:#5CB85C; margin-left:3px" class="fa fa-check-circle"></i>
+            <a style="margin-left:0.5em" ng-bind-html="selection.title" ui-sref="lesson({step: $index, lesson: lessonIndexChosen, class: classChosen})"  ng-click="ok()"></a>
+            </span>
+            <span style="padding-left:25px" ng-bind-html="selection.title" ng-hide="$index <= maxStepIndex"> </span>
         </div>
     </section>
 </div>

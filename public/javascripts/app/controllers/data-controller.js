@@ -8,7 +8,7 @@ angular
         // }
         var h;
         $rootScope.windowHeight = h;
-        $scope.selectedAnswers = [];
+        $rootScope.selectedAnswers = [];
         $scope.questionsTotal = 0;
         $scope.questionsCorrect = 0;
         $rootScope.maxStepIndex= 0;
@@ -29,8 +29,8 @@ angular
 
         var resetNow = function() {
             $rootScope.submitted = null;
-            $scope.selectedAnswers = [];
-            $scope.answerResult = null;
+            $rootScope.selectedAnswers = [];
+            $rootScope.answerResult = [];
             $rootScope.answerArr = [];
             !!$rootScope.currentLessonStep ? $rootScope.currentLessonStep.answer=null : null ;
 
@@ -45,12 +45,12 @@ angular
 
             $rootScope.answerArr = $rootScope.currentLessonStep.answer.split(',');
 
-            if ($scope.selectedAnswers.sort().join(',') === $rootScope.currentLessonStep.answer) {
-                $scope.answerResult = true;
+            if ($rootScope.selectedAnswers.sort().join(',') === $rootScope.currentLessonStep.answer) {
+                $rootScope.answerResult = true;
                 $scope.questionsCorrect++;
 
             } else {
-                $scope.answerResult = false;
+                $rootScope.answerResult = false;
             }
 
             $scope.questionsTotal++;
@@ -59,15 +59,15 @@ angular
 
             // console.log(index);
             // on next clear the 
-            if ($scope.selectedAnswers.indexOf(index) === -1) {
-                $scope.selectedAnswers.push(index);
+            if ($rootScope.selectedAnswers.indexOf(index) === -1) {
+                $rootScope.selectedAnswers.push(index);
 
             } else {
                 // console.log(index);
-                var selectdAnswersArrIndex = $scope.selectedAnswers.indexOf(index);
+                var selectdAnswersArrIndex = $rootScope.selectedAnswers.indexOf(index);
                 // console.log("selectdAnswersArrIndex");
                 // console.log(selectdAnswersArrIndex);
-                $scope.selectedAnswers.splice(selectdAnswersArrIndex, 1);
+                $rootScope.selectedAnswers.splice(selectdAnswersArrIndex, 1);
             }
             // console.log($scope.selectedAnswers);
         }
@@ -77,10 +77,10 @@ angular
 
             // console.log(index);
             // on next clear the 
-            $scope.selectedAnswers = [];
+            $rootScope.selectedAnswers = [];
 
-            if ($scope.selectedAnswers.indexOf(index) === -1) {
-                $scope.selectedAnswers.push(index);
+            if ($rootScope.selectedAnswers.indexOf(index) === -1) {
+                $rootScope.selectedAnswers.push(index);
             }
         }
 
@@ -1927,7 +1927,7 @@ angular
                                 "title": "What can the infrared sensor do? <br>Select all that applies.",
                                 "type": "quiz:all",
                                 "questions": "Tell which buttons are pressed on the remote beacon | Receive message from voice command | Tell the color in front of the sensor | Measure distance in front of the sensor | track the position(angle, distance) of the remote beacon relative to the infrared sensor",
-                                "answer": "1,2,3"
+                                "answer": "0,3,4"
                             }, {
                                 "instruction": "The infrared sensor can be configured into the following three modes: <br><br> Distance mode let us know how far away is the next object in front of the infrared sensor. <br><br>Beacon mode tells us if the remote beacon is close or far away from the sensor, left or right of the sensor, also if the remote beacon can be detected at all by the sensor. <br><br> There is also the remote mode, which listens to the remote beacon, and let the robot know if any buttons are pressed.",
                                 "type": "image",
@@ -1954,7 +1954,85 @@ angular
                                 "type": "quiz:all",
                                 "questions": "Monitor| Mouse | Keyboard | Speaker |  All",
                                 "answer": "1,2"
-                            }
+                            }, {
+                                "title": "Connect the dots",
+                                "type": "image",
+                                "instruction": "Now hopefully we understand inputs: information that are given to us, and outputs: actions we want the robot to do. How do we tie the two together? <br><br> For speed, let's make the robot go faster if the remote beacon is far away, and make it go slower if it is close by. Make sense right? <br><br> How about steering? Similiarly, if the remote beacon is positioned a lot to the left of the robot, then make the robot steer alot to the left. if the robot is only a tiny bit to the right, then we only have to steer a tiny number to the right. <br><br> What do we do with detected? If we cannot detect the robot at all, then tell the robot not to move, until it can detect the remote beacon.",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447485491/mindstorm_l7_s6_bublly.png"
+                            }, {
+                                "title": "Speed control",
+                                "type": "youtube",
+                                "instruction": "Ok enough talking, let's finally get into action. <br><br> Speed will be proportional to the distance reading of the Infrared sensor in beacon mode. We can make this connection using data wire. <br><br> Watch the video and find out!",
+                                "location": "https://www.youtube.com/embed/gbnY1EX__TM?rel=0&amp;showinfo=0"
+                            }, {
+                                "title": "Steering control",
+                                "type": "image",
+                                "instruction": "Like we said before, steering should be proportional to the measured heading of the infrared sensor in beacon mode. <br><br> The greater the heading, the greater the steering action. When the heading is near 0 (frontal), the robot will drive straight toward the beacon. <br><br> One thing to notice here is that we cannot use the heading data right away, because the steering need a number from -100 to 100, and measured heading from the IR sensor only gives us -25 to 25. In order to have control over the entire range of steering, we need to multiply bearing by 4, before sending it to motor steering. <br><br> A little bit complicated? Don't worry, you'll get it. ",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447511266/mindstorm_l7_s7_eo2ekx.png"
+                            }, {
+                                "title": "How can we do math in Lego EV3?",
+                                "type": "youtube",
+                                "instruction": "By multiplying measured bearing by four before feeding the number into steering, we are now involving math operations into our programming. <br><br> We can achieve this in Lego EV3 by using the Math block. Watch the video to see how this is done. ",
+                                "location": "https://www.youtube.com/embed/aVZHZ4hI6qo?rel=0&amp;showinfo=0"
+                            }, {
+                                "title": "Stop the robot if the remote beacon cannot be detected",
+                                "type": "youtube",
+                                "instruction": "If the sensor can detect the remote beacon, then follow the beacon, if not, then just stay till. <br><br> If you hear if statements like this, the block that should pop in your head is the switch block.<br><br> Let's set up a switch statement for our steering motor.",
+                                "location": "https://www.youtube.com/embed/Gujr9ceR-Fk?rel=0&amp;showinfo=0"
+                            },{
+                                "title": "What went wrong in the previous video? Select all that applies.",
+                                "type": "quiz:all",
+                                "questions": "Switch statement should be placed at the beginning instead of the end| All the data wires on the steering motor are gone after it was moved into the switch block | The switch statement cannot be set to infrared sensor in beacon mode | Nothing's wrong, all's perfect",
+                                "answer": "1,2"
+                            },{
+                                "title": "Oh no, all our hard work is gone!",
+                                "type": "image",
+                                "instruction": "if you paid close attention to the video, you'll notice that when we moved the motor into the switch block, all the data wires are removed. <br><br> Also, when we check the possible check conditions for a switch block, the infrared sensor in beacon mode is nowhere to be seen. <br><br> What do we do?",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447514612/mindstorm_l7_s8_h296ou.png"
+                            }, {
+                                "title": "Let's reconnect the data wires",
+                                "type": "youtube",
+                                "instruction": "In order to reconnect the data wires from the infrared sensor block to the motor block. which is now sitting inside the switchment statement, we must first set it to tabbed view. <br><br> Follow the video, and reconnect the data wires.",
+                                "location": "https://www.youtube.com/embed/YkdyWgs1viA?rel=0&amp;showinfo=0"
+                            }, {
+                                "title": "Stop the robot if nothing detected!",
+                                "type": "youtube",
+                                "instruction": "Now that we reconnected the data wires, let's solve our second problem: set the switch statement condition to the detected state of the infrared sensor in beacon mode. <br><br> Since we cannot set the switch statement to check the sensor in beacon mode right away, we must first set the switch statement to logic mode, that simply asks for a answer in the form of yes or no, and then connect the detected state from sensor to the switch statement using data wires. <br><br> Watch the video, and hopefully it will all be clear.",
+                                "location": "https://www.youtube.com/embed/IbhfJSAwykY?rel=0&amp;showinfo=0"
+                            }, {
+                                "title": "Are we done making the robot follow the remote beacon?",
+                                "type": "quiz:one",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447516466/mindstorm_l7_s9_ga92m1.png",
+                                "questions": "Yes! All's good! | No, we are missing something",
+                                "answer": "1"
+                            }, {
+                                "title": "One More Step",
+                                "type": "youtube",
+                                "instruction": "Hopefully you realized that this switch statement will only run once with the current setup. <br><br> We need to apply our favourite loop statement, so the switch statement will check the sensor reading over and over again, so the robot will continue to follow the remote beacon.<br><br> Watch the video for the last episode, and yes you may have to reconnect the data wires, but this is a piece of cake for you now right?",
+                                "location": "https://www.youtube.com/embed/f6ESUpb-G0E?rel=0&amp;showinfo=0"
+                            },{
+                            "title": "Try it out!",
+                            "type": "image",
+                            "instruction": "That was a lot of hard work we put in, good job! Let's try it out, and see if it is able to follow our robot. Make sure the <b>channel</b> you set on the sensor is different than everyone else's, and the wire cable is connected correctly. <br><br> Other things you can think about: How can we make it spin around searching for the remote control, if it cannot detect it? <br><br> Can we make the robot follow the remote control at a certain distance(hint: math block)? Give it try, and see you soon.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson6/x.jpg"
+                        }
+
+
+
+
+                            // quiz time: why do we only multiply bearing by 4, not distance?
+
+                            // feedback: You answered... this many questions right, wrong
+                            // anything to improve? 
+
+                            // stay within a certain distance. Don't get too close!
+
+                            // Math block on the distance, minus. Let them think about it!
+
+                             // if not detected, spin around in one place! 
+
+                            // give your self pad on the back, this is a very complex program!
+// improvement, using average filter
 
 
                         ]

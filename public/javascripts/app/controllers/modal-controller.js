@@ -26,7 +26,7 @@ angular
                 animation: true,
                 templateUrl: '/javascripts/app/tpl/lessonsList.html',
                 controller: 'ModalInstanceCtrl',
-                size: 'sm',
+                size: 'md',
                 resolve: {
                     items: function() {
                         // return $scope.items;
