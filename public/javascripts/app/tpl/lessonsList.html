@@ -1,0 +1,30 @@
+<nav class="navbar navbar-fixed-top" style="background: #5BC0DE;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" style="color:white" ng-click="ok()">Home</a>
+        </div>
+    </div>
+</nav>
+<div class="modal-body" style="margin-top:50px">
+<!--     <a ng-click="ok()">
+        <i class="fa fa-times" style="font-size:1em; color:black; padding:10px"></i>
+    </a> -->
+    <section href="" class="list-group-item" ng-repeat="selection in lessonData" style="padding:1px 3px; 
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    height:25px">
+        <div class="" style="">
+            <a style="margin-left:0.5em" ng-bind-html="selection.title" ui-sref="lesson({step: $index, lesson: lessonIndexChosen, class: classChosen})" ng-if="$index <= maxStepIndex " ng-click="ok()"></a>
+            <span style="margin-left: 0.5em" ng-bind-html="selection.title" ng-hide="$index <= maxStepIndex"> </span>
+        </div>
+    </section>
+</div>

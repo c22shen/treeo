@@ -38,19 +38,19 @@ body {
   margin-bottom: 0;
 }
 
-.modal-dialog {
+/*.modal-dialog {
   width: 100%;
   height: 100%;
   margin: 0px auto;
   padding: 0;
-}
+}*/
 
-.modal-content {
+/*.modal-content {
   height: 100%;
   border-radius: 0;
   background: white;
   opacity:0.95;
-}
+}*/
 
 .modal-body {
     padding: 0;

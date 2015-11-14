@@ -6,7 +6,7 @@ angular
             link: function(scope, element, attrs) {
                 element.bind('load', function() {
                     //call the function that was passed
-                    alert('image is loaded');
+                    // alert('image is loaded');
                     scope.$apply(attrs.imageonload);
                 });
             }

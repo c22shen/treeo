@@ -11,6 +11,7 @@ angular
         $scope.selectedAnswers = [];
         $scope.questionsTotal = 0;
         $scope.questionsCorrect = 0;
+        $rootScope.maxStepIndex= 0;
         // $rootScope.myStyle = {height:h};
 
 
@@ -29,7 +30,9 @@ angular
         var resetNow = function() {
             $rootScope.submitted = null;
             $scope.selectedAnswers = [];
-            $scope.answerResult = {};
+            $scope.answerResult = null;
+            $rootScope.answerArr = [];
+            !!$rootScope.currentLessonStep ? $rootScope.currentLessonStep.answer=null : null ;
 
 
         }
@@ -115,15 +118,18 @@ angular
         })
 
         $scope.$watch('stepIndexChosen', function(stepIndexChosen) {
-            $rootScope.stepIndexChosen = stepIndexChosen;
+            $rootScope.stepIndexChosen = parseInt(stepIndexChosen);
             if ($rootScope.lessonIndexChosen) {
                 // $rootScope.progressLessonStepTotal = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps.length;
                 // $rootScope.currentLessonStep = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)].lessonSteps[parseInt($rootScope.stepIndexChosen)];
                 var lessonValuePair = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)];
-                var lessonData = lessonValuePair[Object.keys(lessonValuePair)[0]];
+                $rootScope.lessonData = lessonValuePair[Object.keys(lessonValuePair)[0]];
 
 
-                $rootScope.currentLessonStep = lessonData[parseInt($rootScope.stepIndexChosen)];
+                $rootScope.currentLessonStep = $rootScope.lessonData[parseInt($rootScope.stepIndexChosen)];
+                // Determine the maximum step
+                $rootScope.maxStepIndex = stepIndexChosen > $rootScope.maxStepIndex ? stepIndexChosen : $rootScope.maxStepIndex;
+
             }
         })
 
@@ -133,18 +139,17 @@ angular
             if ($rootScope.stepIndexChosen) {
 
                 var lessonValuePair = $rootScope.currentClassContent[parseInt($rootScope.lessonIndexChosen)];
-                var lessonData = lessonValuePair[Object.keys(lessonValuePair)[0]];
-                // console.log(lessonData);
+                $rootScope.lessonData = lessonValuePair[Object.keys(lessonValuePair)[0]];
 
 
 
-                $rootScope.progressLessonStepTotal = lessonData.length;
+                $rootScope.progressLessonStepTotal = $rootScope.lessonData.length;
 
                 if ($rootScope.stepIndexChosen >= $rootScope.progressLessonStepTotal) {
                     $rootScope.stepIndexChosen = 0;
                 }
 
-                $rootScope.currentLessonStep = lessonData[parseInt($rootScope.stepIndexChosen)];
+                $rootScope.currentLessonStep = $rootScope.lessonData[parseInt($rootScope.stepIndexChosen)];
                 // parseInt($rootScope.stepIndexChosen)
 
             }

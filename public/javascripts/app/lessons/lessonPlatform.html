@@ -1,3 +1,12 @@
+<div ng-controller="ModalController">
+    <i ng-show="currentLessonStep.type.indexOf('quiz') === -1 && currentLessonStep.type.indexOf('cover') === -1" class="fa  fa-list-ul" style="position: absolute;
+    margin-left: 0.5em;
+    font-size: 2em;
+    color:white;
+    margin-top: 0.5em;
+    z-index: 2;
+    " ng-click="openLesson()"></i>
+</div>
 <div class="row" ng-if="currentLessonStep.type === 'cover'" ng-style="myStyle" style="background: #5BC0DE; color:white;">
     <h1 class="text-center" ng-style="lineHeightStyle">{{currentLessonStep.title}}<button type="button" style="margin-left:1em; margin-bottom:10px" class="btn btn-primary btn-lg" ng-click="nextPage()">Start Now</button></h1>
 </div>
@@ -19,8 +28,7 @@
             <div style="margin-top:3em">
                 <section href="" ng-click="selectAnswer($index)" class="cursorHand list-group-item" ng-class="{true: 'black', false: 'selected'}[selectedAnswers.indexOf($index)===-1]" ng-repeat="selection in currentLessonStep.questions.split('|')" style="margin:0.5em 0">
                     <div class="" style="margin-top: 0; ">
-                        <!-- <i style="margin-right:0.5em;" class="fa fa-thumbs-down"></i> -->
-                        <p style="margin-left:2em">
+                          <p style="margin-left:2em">
                             <i ng-if="submitted && answerArr.indexOf($index.toString())!=-1" style="margin-right:0.5em; " class="fa fa-check-circle-o"></i> {{selection}}
                         </p>
                     </div>
@@ -31,10 +39,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 <div class="row" ng-if="currentLessonStep.type === 'quiz:one'" ng-style="myStyle" style=" background: #5BC0DE; color:white;">
     <div class="container">
         <div class="row">
@@ -65,19 +69,14 @@
         </div>
     </div>
 </div>
-
-
-
-
 <div class="row" ng-if="currentLessonStep.type !== 'cover' && currentLessonStep.type.indexOf('quiz') === -1">
     <div class="col-sm-5" ng-style="myStyle" style="background: #5BC0DE; color:white; box-shadow: 5px 0px 3px #337AB7; overflow: auto">
-        <!--                          <a class="pull-left" href="#home" style="color:#337AB7; font-size:1em"><b>TREEO</b></a> -->
         <h1 style="margin-top:50px">{{currentLessonStep.title}}</h1>
         <p style="margin-top:80px; font-size:1.2em" ng-bind-html="currentLessonStep.instruction"></p>
-        <button type="button" class="btn btn-primary" ng-click="nextPage()" style="margin-top:1em; margin-bottom:2em">Continue</button>
+        <button type="button" ng-hide="stepIndexChosen >= lessonData.length-1" class="btn btn-primary" ng-click="nextPage()" style="margin-top:1em; margin-bottom:2em">Continue</button>
     </div>
-    <div ng-controller="ModalController" class="col-sm-7 pull-right" ng-switch on="currentLessonStep.type">
-        <a class=" pull-right" ng-click="open()"> <i class="fa fa-info-circle" style="font-size:2em; margin-top:15px; color:#337AB7"></i></a>
+    <div class="col-sm-7 pull-right" ng-switch on="currentLessonStep.type">
+        <!-- <a class=" pull-right" ng-click="open()"> <i class="fa fa-info-circle" style="font-size:2em; margin-top:15px; color:#337AB7"></i></a> -->
         <section style="margin-top:50px;">
             <img ng-switch-when="image" style="width:100%" ng-src="{{currentLessonStep.location}}" alt="">
             <div ng-switch-when="video" align="center" class="embed-responsive embed-responsive-16by9">
@@ -89,7 +88,6 @@
             </div>
         </section>
     </div>
-
 </div>
 </div>
 <!-- <div class="footer">

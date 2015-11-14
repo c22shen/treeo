@@ -20,4 +20,21 @@ angular
             modalInstance.result.then(function() {}, function() {});
         };
 
+        $scope.openLesson = function(size) {
+            // console.log("HERE");
+            var modalInstance = $modal.open({
+                animation: true,
+                templateUrl: '/javascripts/app/tpl/lessonsList.html',
+                controller: 'ModalInstanceCtrl',
+                size: 'sm',
+                resolve: {
+                    items: function() {
+                        // return $scope.items;
+                    }
+                }
+            });
+
+            modalInstance.result.then(function() {}, function() {});
+        };
+
     }]);
