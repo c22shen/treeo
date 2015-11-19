@@ -6,7 +6,7 @@ angular
         // if (!loginStatus) {
         //     $state.go('login');
         // }
-        var h;
+        var h, w;
         $rootScope.windowHeight = h;
         $rootScope.selectedAnswers = [];
         $scope.questionsTotal = 0;
@@ -22,9 +22,9 @@ angular
         })
 
         $scope.$watch(function() {
-            // w = el.clientWidth;
+            w = $window.innerWidth;
             h = $window.innerHeight;
-            return h;
+            return h + w;
         }, resize);
 
         var resetNow = function() {
@@ -84,13 +84,9 @@ angular
             }
         }
 
-
-
-
-
         function resize() {
             $rootScope.windowHeight = h;
-            var heightValue = h + 'px';
+            var heightValue = w > 900 ? h + 'px' : 0;
             $rootScope.myStyle = {
                 'min-height': heightValue
             };
@@ -1185,6 +1181,48 @@ angular
                             "instruction": "Okay students, we've learned a lot of new things today and you should be proud of what you accomplished!",
                             "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/5.png"
                         }]
+                    }, {
+                        "lesson_8": [{
+                            "title": "1-1: Lesson 8 - Your Own Project",
+                            "type": "image",
+                            "instruction": "Hi everyone! Welcome to Lesson 8 of Scratch I with Treeo Academy. This is the final lesson for this course so congratulations for making it this far!<br><br>Today's lesson will be short because we want you to use what you've learned so far in the course and make your own project!<br><br>Before you do that, there is just one final technique you need to learn that can make programming a little easier for you. Click <b>next</b> to get started!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/0.jpg"
+                        }, {
+                            "title": "1-2: Functions in Programming",
+                            "type": "image",
+                            "instruction": "We will be using a programming concept called <b>functions</b> that is widely used to make it easy to reuse code in the same project and across other projects.<br><br>What exactly is a function? A function is basically a sequence of commands grouped together and labeled with a name. You can run the function by calling its name in the program.<br><br>Go to the next page for an example.",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/x.jpg"
+                        }, {
+                            "title": "1-3: Example of a Function (part 1)",
+                            "type": "video",
+                            "instruction": "Let's say we want to make a simple program to make our Sprite walk in a square. You already know how to do this and you will probably make something like what's shown in this video.<br><br>If you need your Sprite to walk in a square again later on in your program, you can just copy over the code.<br><br>That's pretty straightforward, right? Well, what if there is an even better way to do this? Head on to the next page to find out!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/1.mp4"
+                        }, {
+                            "title": "1-4: Example of a Function (part 2)",
+                            "type": "video",
+                            "instruction": "To simplify our code, we can make our own function called <b>walk in square</b> under the <b>More Blocks</b> section and put our code in the function.<br><br>When we want our Sprite to walk in a circle, instead of copying over all the code, we can just call the function <b>walk in square</b>!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/2.mp4"
+                        }, {
+                            "title": "1-5: Why Functions?",
+                            "type": "video",
+                            "instruction": "What's great about functions is that once you make a function, you never have to rewrite the same code over again! All you need to do is call the function that you've previously made.<br><br>",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/3.mp4"
+                        }, {
+                            "title": "1-6: Another Example",
+                            "type": "video",
+                            "instruction": "Let's look at a more complicated example where functions come in handy.<br><br>Look at this program. You can see that two functions are used: one called <b>initialize</b> to set up the basics in the program and another called <b>projectileMath</b> to do the fancy calculation for the flight path of the cannonball.<br><br>Functions also make our code much easier to read and understand!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/4.mp4"
+                        }, {
+                            "title": "1-7: Make your own program!",
+                            "type": "video",
+                            "instruction": "Okay students, now it's your turn to take what you've learned in the last 7 lessons and make your very own program! Your program can be anything you want it to be, but try to make at least one function in your program.<br><br>If you're stuck on coming up with an idea, click <a href='https://scratch.mit.edu/explore/?date=this_month' target='_blank'>HERE</a> to look at programs made by others in the Scratch community!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/5.mp4"
+                        }, {
+                            "title": "1-8: Course Complete!",
+                            "type": "image",
+                            "instruction": "Okay students, that concludes our Scratch I programming course! You have definitely learned a lot in this course and you are well on your way to becoming a pro a programming! Check out our next level Scratch course - Scratch II programming with Treeo Academy.<br><br>See you soon!",
+                            "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson8/5.png"
+                        }]
                     }
                 ],
                 "mindstorm": [{
@@ -2132,6 +2170,56 @@ angular
                             // give your self pad on the back, this is a very complex program!
                             // improvement, using average filter
 
+
+                        ]
+                    },
+
+                    {
+                        "lesson_8": [{
+                                "title": "Sumo Robot Battle",
+                                "type": "cover",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447907464/sumo_remove_background_bnl0dj.png"
+                            }, {
+                                "title": "Let's see how Lego Sumo robot works",
+                                "type": "youtube",
+                                "instruction": "Sumo fighting is never just for human beings.<br><br> Watch the video to see how robots takes each other out of the ring, and tries to become the ultimate sumo robot champion!",
+                                "location": "https://www.youtube.com/embed/oWf4JbnbWYw?rel=0&amp;showinfo=0"
+                            }, {
+                                "title": "Knowing that if the sumo robot goes out of the ring first, then it loses,which components must be used for a sumo robot?",
+                                "type": "quiz:one",
+                                "questions": "Infrared sensor | Color Sensor  | Touch Sensor | Motor | remote beacon",
+                                "answer": "0,3"
+                            }, {
+                                "title": "Three golden rules",
+                                "type": "image",
+                                "instruction": "The goal of sumo fighting is simple. <br><br>Stay in the ring, and push others out.",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447903723/mindstorm_l8_s1_vpt8rm.png"
+                            }, {
+                                "instruction": "We make a circle with black tape, taped on our desk with white surface. <br><br> It can be a circular ring like the one shown here.",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447904141/mindstorm_l8_s3_mliizc.png",
+                                "type": "image",
+                                "title": "The ring"
+                            }, {
+                                "title": "How can we tell if the robot is inside or outside the ring?",
+                                "type": "quiz:one",
+                                "questions": "Distance travelled by the robot| Roughness of the table area | Color of area under the robot | Pure luck",
+                                "answer": "2"
+                            }, {
+                                "instruction": "You guys are now experts in Lego robotics, and you have all the tools to make this sumo robot possible. <br><br> Go ahead and try to to make the program yourself from scratch! Isn't it so exciting? <br><br> Remember, don't be afraid to fail, afraid not to try. I have full confidence in your ability.",
+                                "type": "image",
+                                "title": "Try it out yourself!",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447909310/mindstorm-l8-s7_tksql3.jpg"
+                            }, {
+                                "instruction": "Basic idea of our robot. <br><br> You can follow this guideline, or make your own logic. <br><br> We will put everyone's robot to test at the end of the lesson. <br><br> May be best robot win! <br><br> Feel free to talk with your classmates and discuss with your instructor. Challenge: Can you make use of the infrared sensor somehow to help your sumo robot?",
+                                "type": "image",
+                                "title": "Possible game plan",
+                                "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447906168/mindstorm_l8_s4_xtuo4k.png"
+                            }, {
+                                "instruction": "Thank you everyone for a wonderful season. You guys worked really hard, and we did a lot of cool stuff together. <br><br> I hope you guys enjoyed learning and playing with your Lego robots. <br><br> We had a lot of fun making those lessons, and I hope it was just as fun for you to learn them as well. <br><br> Best of luck with all your future dreams, and make good use of the skills you learned in this class. Until next time.",
+                                "type": "image",
+                                "title": "Thank you!",
+                                "location": "https://s3-us-west-2.amazonaws.com/treeo/scratch1/lesson7/5.png"
+                            }
 
                         ]
                     }
