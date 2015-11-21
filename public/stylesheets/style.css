@@ -71,23 +71,15 @@ a:hover {
   width: 106px;
   height: 34px;
   background-color: #5BC0DE;
-
   moz-border-radius: 34px;
   -webkit-border-radius: 34px;
   border-radius: 34px;
-
-  /*border: 5px solid #0049a2;*/
-  /*padding: 5px;*/
-
   padding: 4px 12px;
   color:white;
-  /*color:#1186d5;*/
   border:none;
   vertical-align: middle;
-  font-family : 'Roboto-Bold';
   font-size: 13pt !important;
 &:hover { background-color: #1186d5; color:#0049A1}
-
 } 
 
 .buttonRoundedCornersBlue {
@@ -98,16 +90,10 @@ a:hover {
   moz-border-radius: 34px;
   -webkit-border-radius: 34px;
   border-radius: 34px;
-
-  /*border: 5px solid #0049a2;*/
-  /*padding: 5px;*/
-
   padding: 4px 12px;
   color:white;
-  /*color:#1186d5;*/
   border:none;
   vertical-align: middle;
-  font-family : 'Roboto-Bold';
   font-size: 13pt !important;
 &:hover { background-color: #1186d5; color:#0049A1}
 
@@ -121,16 +107,10 @@ a:hover {
   moz-border-radius: 34px;
   -webkit-border-radius: 34px;
   border-radius: 34px;
-
-  /*border: 5px solid #0049a2;*/
-  /*padding: 5px;*/
-
   padding: 4px 12px;
   color:white;
-  /*color:#1186d5;*/
   border:none;
   vertical-align: middle;
-  font-family : 'Roboto-Bold';
   font-size: 17pt !important;
 &:hover { background-color: #1186d5; color:#0049A1}
 

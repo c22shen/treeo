@@ -38,12 +38,12 @@ angular
             if ($rootScope.selectedAnswers.sort().join(',') === $rootScope.currentLessonStep.answer) {
                 $rootScope.answerResult = true;
                 $scope.questionsCorrect++;
-
             } else {
                 $rootScope.answerResult = false;
             }
 
             $scope.questionsTotal++;
+            $scope.finalScore = Math.round($scope.questionsCorrect/$scope.questionsTotal*100.0);
         }
         $scope.selectAnswer = function(index) {
             if ($rootScope.selectedAnswers.indexOf(index) === -1) {
@@ -2060,6 +2060,11 @@ angular
                             "instruction": "Sumo fighting is never just for human beings.<br><br> Watch the video to see how robots takes each other out of the ring, and tries to become the ultimate sumo robot champion!",
                             "location": "https://www.youtube.com/embed/oWf4JbnbWYw?rel=0&amp;showinfo=0"
                         }, {
+                            "title": "Which of the following properties may impact the performance of a sumo robot?",
+                            "type": "quiz:all",
+                            "questions": "Wheal friction | Weight of the robot  | Size of the robot | How the robot is programmed | How much power left in the batteries",
+                            "answer": "0,1,2,3,4"
+                        },{
                             "title": "Knowing that if the sumo robot goes out of the ring first, then it loses,which components must be used for a sumo robot? <br> Select all that applies.",
                             "type": "quiz:all",
                             "questions": "Infrared sensor | Color Sensor  | Touch Sensor | Motor | remote beacon",
@@ -2070,6 +2075,16 @@ angular
                             "instruction": "The goal of sumo fighting is simple. <br><br>Stay in the ring, and push others out.",
                             "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447903723/mindstorm_l8_s1_vpt8rm.png"
                         }, {
+                            "title": "How to solve a complex problem?",
+                            "type": "video",
+                            "instruction": "Solving a difficult problem like programming a sumo robot can cause a lot of headache. <br><br> Watch this very fun video to learn how to tackle problems containing multiple steps like this. <br><br> Then, try to apply the information learned here to program your robot!",
+                            "location": "http://res.cloudinary.com/dod2fovtd/video/upload/v1448077960/iterative_process_mai9dy.mp4"
+                        },{
+                            "title": "What's the right way to solve an complex problem?",
+                            "type": "quiz:one",
+                            "questions": "Do everything all at once, before you forget what you were doing| When a problem is too hard, first go ask someone for help | Copy someone else's solution, it has to work right | Try to solve the problem step by step, and make sure each step works first before going to the next",
+                            "answer": "3"
+                        },{
                             "instruction": "We make a circle with black tape, taped on our desk with white surface. <br><br> It can be a circular ring like the one shown here.",
                             "location": "http://res.cloudinary.com/dod2fovtd/image/upload/v1447904141/mindstorm_l8_s3_mliizc.png",
                             "type": "image",
