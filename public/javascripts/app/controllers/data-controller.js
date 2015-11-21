@@ -5,8 +5,8 @@ angular
 
         var h, w;
         $rootScope.selectedAnswers = [];
-        $scope.questionsTotal = 0;
-        $scope.questionsCorrect = 0;
+        $rootScope.questionsTotal = 0;
+        $rootScope.questionsCorrect = 0;
         $rootScope.maxStepIndex = 0;
 
         angular.element($window).on('resize', function() {
@@ -37,13 +37,13 @@ angular
 
             if ($rootScope.selectedAnswers.sort().join(',') === $rootScope.currentLessonStep.answer) {
                 $rootScope.answerResult = true;
-                $scope.questionsCorrect++;
+                $rootScope.questionsCorrect++;
             } else {
                 $rootScope.answerResult = false;
             }
 
-            $scope.questionsTotal++;
-            $scope.finalScore = Math.round($scope.questionsCorrect/$scope.questionsTotal*100.0);
+            $rootScope.questionsTotal++;
+            $rootScope.finalScore = Math.round($rootScope.questionsCorrect/$rootScope.questionsTotal*100.0);
         }
         $scope.selectAnswer = function(index) {
             if ($rootScope.selectedAnswers.indexOf(index) === -1) {
