@@ -9,20 +9,18 @@
     box-shadow: none; 
     margin-bottom:10px;
     background: #5BC0DE">
-                    <!-- border-bottom: medium solid #0078D7; -->
                     <accordion-heading style="background-color: transparent;">
                         <span style="color:white">Lesson {{ $index +1}}</span>
                         <i class="pull-right glyphicon" style="color:white" ng-class="{'glyphicon-chevron-down': status, 'glyphicon-chevron-right': !status}"></i>
                     </accordion-heading>
                     <ul class="list-group">
-                    <a class="" ng-repeat="step in lesson[getKey(lesson)]" ui-sref="lesson({step: $index, lesson: $parent.$index, class: classChosen})">
-                        <li class="list-group-item" style="background: #5BC0DE; color:white">
-
-                            {{step.title}}
-                            <i class="fa fa-arrow-circle-right pull-right" style="font-size:1.5em; color: white"></i>
-                            <span ng-if="$index===0" class="badge">Start here!</span>
-                        </li>
-                    </a>
+                        <a class="" ng-repeat="step in lesson[getKey(lesson)]" ui-sref="lesson({step: $index, lesson: $parent.$index, class: classChosen})">
+                            <li class="list-group-item" style="background: #5BC0DE; color:white">
+                                {{step.title}}
+                                <i class="fa fa-arrow-circle-right pull-right" style="font-size:1.5em; color: white"></i>
+                                <span ng-if="$index===0" class="badge">Start here!</span>
+                            </li>
+                        </a>
                     </ul>
                 </accordion-group>
             </accordion>

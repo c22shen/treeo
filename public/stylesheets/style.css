@@ -1,11 +1,7 @@
 body {
-  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/*a {
-  color: #00B7FF;
-}*/
 
 .bg {
   background: url('/images/jumbotron.jpg') no-repeat center center;
@@ -37,20 +33,6 @@ body {
 .progress {
   margin-bottom: 0;
 }
-
-/*.modal-dialog {
-  width: 100%;
-  height: 100%;
-  margin: 0px auto;
-  padding: 0;
-}*/
-
-/*.modal-content {
-  height: 100%;
-  border-radius: 0;
-  background: white;
-  opacity:0.95;
-}*/
 
 .modal-body {
     padding: 0;
@@ -85,71 +67,75 @@ a:hover {
   color:#5BC0DE;
 }
 
+.buttonRoundedCornersDarkBlue {
+  width: 106px;
+  height: 34px;
+  background-color: #5BC0DE;
 
+  moz-border-radius: 34px;
+  -webkit-border-radius: 34px;
+  border-radius: 34px;
 
+  /*border: 5px solid #0049a2;*/
+  /*padding: 5px;*/
 
+  padding: 4px 12px;
+  color:white;
+  /*color:#1186d5;*/
+  border:none;
+  vertical-align: middle;
+  font-family : 'Roboto-Bold';
+  font-size: 13pt !important;
+&:hover { background-color: #1186d5; color:#0049A1}
 
+} 
 
+.buttonRoundedCornersBlue {
+  width: 106px;
+  height: 34px;
+  background-color: #0049a1;
 
-/**
-{
-    margin: 0;
-    padding: 0;
-}*/
+  moz-border-radius: 34px;
+  -webkit-border-radius: 34px;
+  border-radius: 34px;
 
-/*html, body, .Override.container, .Override .col-md-4, .Override .col-md-8
-{
-    height: 100%;
+  /*border: 5px solid #0049a2;*/
+  /*padding: 5px;*/
+
+  padding: 4px 12px;
+  color:white;
+  /*color:#1186d5;*/
+  border:none;
+  vertical-align: middle;
+  font-family : 'Roboto-Bold';
+  font-size: 13pt !important;
+&:hover { background-color: #1186d5; color:#0049A1}
+
+} 
+
+.buttonRoundedCornersBlueBig {
+  width: 136px;
+  height: 44px;
+  background-color: #0049a1;
+
+  moz-border-radius: 34px;
+  -webkit-border-radius: 34px;
+  border-radius: 34px;
+
+  /*border: 5px solid #0049a2;*/
+  /*padding: 5px;*/
+
+  padding: 4px 12px;
+  color:white;
+  /*color:#1186d5;*/
+  border:none;
+  vertical-align: middle;
+  font-family : 'Roboto-Bold';
+  font-size: 17pt !important;
+&:hover { background-color: #1186d5; color:#0049A1}
+
+} 
+
+button[disabled], html input[disabled] {
+  color: grey;
 }
-
-.Override *:before, .Override *:after
-{
-    display: none;
-}
-
-.Override.container:before
-{
-    content: '';
-    display: block;
-    float: left;
-    height: 100%;
-}
-
-.Override .fill
-{
-    color: #efefef;
-    background-color: blue;
-    position: relative;
-}
-    .Override .fill:after
-    {
-        content: '';
-        display: block;
-        clear: left;
-    }
-
-.Override .wrapper
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.Override .col-md-12
-{
-    background-color: red;
-}
-
-.Override .col-md-4
-{
-    float: left;
-    position: static;
-    background-color: yellow;
-}
-
-.Override .col-md-8
-{
-    position: static;
-    background-color: green;
-    overflow: auto;
-}*/

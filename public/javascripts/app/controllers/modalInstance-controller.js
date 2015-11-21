@@ -1,17 +1,11 @@
 angular
     .module('app')
-      .controller('ModalInstanceCtrl', function ($scope, $modalInstance, items) {
+    .controller('ModalInstanceCtrl', function($scope, $modalInstance, items) {
+        $scope.ok = function() {
+            $modalInstance.close();
+        };
 
-  // $scope.items = items;
-  // $scope.selected = {
-  //   item: $scope.items[0]
-  // };
-
-  $scope.ok = function () {
-    $modalInstance.close();
-  };
-
-  $scope.cancel = function () {
-    $modalInstance.dismiss('cancel');
-  };
-});
+        $scope.cancel = function() {
+            $modalInstance.dismiss('cancel');
+        };
+    });

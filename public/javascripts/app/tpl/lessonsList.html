@@ -7,14 +7,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/" style="color:white" ng-click="ok()">Home</a>
+            <a class="navbar-brand" ui-sref="home" style="color:white" ng-click="ok()">Home</a>
         </div>
     </div>
 </nav>
 <div class="modal-body" style="margin-top:50px">
-<!--     <a ng-click="ok()">
-        <i class="fa fa-times" style="font-size:1em; color:black; padding:10px"></i>
-    </a> -->
     <section href="" class="list-group-item" ng-repeat="selection in lessonData" style="padding:1px 3px; 
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
@@ -23,8 +20,8 @@
     white-space: nowrap;
     height:24px">
         <div class="" style="">
-        	<span ng-if="$index <= maxStepIndex "> 
-        	<i style="color:#5CB85C; margin-left:3px" class="fa fa-check-circle"></i>
+            <span ng-if="$index <= maxStepIndex "> 
+            <i style="color:#5CB85C; margin-left:3px" class="fa fa-check-circle"></i>
             <a style="margin-left:0.5em" ng-bind-html="selection.title" ui-sref="lesson({step: $index, lesson: lessonIndexChosen, class: classChosen})"  ng-click="ok()"></a>
             </span>
             <span style="padding-left:25px" ng-bind-html="selection.title" ng-hide="$index <= maxStepIndex"> </span>
