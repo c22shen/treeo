@@ -18,7 +18,7 @@
                             <li class="list-group-item" style="background: #5BC0DE; color:white">
                                 {{step.title}}
                                 <i class="fa fa-arrow-circle-right pull-right" style="font-size:1.5em; color: white"></i>
-                                <span ng-if="$index===0" class="badge">Start here!</span>
+                                <span ng-if="$index===0 && !isMobile" class="badge">Start here!</span>
                             </li>
                         </a>
                     </ul>

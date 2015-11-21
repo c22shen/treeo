@@ -63,6 +63,7 @@ angular
         }
 
         function resize() {
+            $rootScope.isMobile = w>900? false: true; 
             var heightValue = w > 900 ? h + 'px' : 0;
             $rootScope.fullScreenStyle = {
                 'min-height': heightValue
